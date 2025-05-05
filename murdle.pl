@@ -7,7 +7,7 @@ left_taller(P1, P2) :-
   height(P1, [F1, I1]), height(P2, [F2, I2]), (F1 > F2);
   height(P1, [F1, I1]), height(P2, [F2, I2]), F1==F2, I1 > I2.
 
-same_height(P1, P2) :- height(P1, [F1, I1]), height(P2, [F2, I2]), F1 == F2, I1 == I2.
+same_height(P1, P2) :- height(P1, [F1, I1]), height(P2, [F2, I2]), F1 == F2, I1 == I2, P1 \== P2.
 
 left_shorter(P1, P2) :- 
   height(P1, [F1, I1]), height(P2, [F2, I2]), (F1 < F2);
@@ -82,7 +82,7 @@ solution(L) :-
   member([P1, _, spa], L), left_handed(P1),
   member([silverton_the_legend, _, theater], L),
   member([_, cufflinks, guard_tower], L),
-  member([signor_emerald, _, rec_room], L), % The suspect with the same height as vice president mauve
+  member([SHVPM, _, rec_room], L), same_height(vice_president_mauve, SHVPM), % The suspect with the same height as vice president mauve
   member([Tallest, _, private_suite], L), findall(P2, height(P2, _), People), tallest(People, Tallest),
   member([mx_tangerine, key, _], L),
   member([_, cake, rec_room], L),
