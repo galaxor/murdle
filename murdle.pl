@@ -52,11 +52,24 @@ sign(sir_rulean, leo).
 sign(father_mango, taurus).
 sign(agent_fuchsia, virgo).
 
+eyes(captain_slate, brown).
+eyes(sister_lapis, brown).
+eyes(coach_raspberry, blue).
+
 
 % Weapon data
 medium_weight(bottle).
 medium_weight(cake).
+medium_weight(dagger).
 light_weight(key).
 light_weight(shiv).
 light_weight(cufflinks).
+light_weight(gloves).
 heavy_weight(lawyer).
+heavy_weight(crystal_ball).
+
+
+% Location data
+outdoors(hedge_maze).
+outdoors(minigolf_course).
+indoors(observatory).
