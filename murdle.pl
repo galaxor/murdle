@@ -13,6 +13,18 @@ left_shorter(P1, P2) :-
 tallest([P|[]], P).
 tallest([P|[P1|T]], M) :- tallest([P|T], M), left_taller(P, P1); tallest([P|T], M), same_height(P, P1); tallest([P1|T], M), left_shorter(P, P1).
 
+% Some predicates for "one of these is a lie".
+% I typed this into the repl, and I got that L = [e].
+%    findall(X, (X=e, \+member(X, [a,b,c])), L).
+% This could be used if a person says "Mx Tangerine was not at the clubhouse",
+% and we can put that and some other assertions in like this:
+%    findall(X1, (X1=principal_applegreen, member(X1, [a, b, c], L2).
+% So that creates lists L and L2 that may have a thing in them, but we don't
+% have to find a situation where all of the statements are true.
+% Then we say 
+%    length(L, N), length(L2, N2), 1 =:= N + N2.
+% Which should give us "one of these two things is true".
+
 
 % Biographical Info
 % I wonder if this information is always the same for each of these people.
