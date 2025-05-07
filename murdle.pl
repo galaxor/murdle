@@ -13,6 +13,14 @@ left_shorter(P1, P2) :-
 tallest([P|[]], P).
 tallest([P|[P1|T]], M) :- tallest([P|T], M), left_taller(P, P1); tallest([P|T], M), same_height(P, P1); tallest([P1|T], M), left_shorter(P, P1).
 
+second_tallest(People, Person) :- 
+  findall(H, (member(P, People), height(P, H)), Heights),
+  sort(Heights, SortedHeights),
+  nth(2, SortedHeights, SecondHeight),
+  member(Person, People),
+  height(Person, SecondHeight)
+.
+
 % Some predicates for "one of these is a lie".
 % I typed this into the repl, and I got that L = [e].
 %    findall(X, (X=e, \+member(X, [a,b,c])), L).
@@ -46,6 +54,8 @@ height(babyface_blue, [7,8]).
 height(silverton_the_legend, [6,4]).
 height(signor_emerald, [5,8]).
 height(mx_tangerine, [5,5]).
+height(dr_crimson, [5,9]).
+height(miss_saffron, [5,2]).
 
 sign(mx_tangerine, pisces).
 sign(sir_rulean, leo).
@@ -55,6 +65,9 @@ sign(agent_fuchsia, virgo).
 eyes(captain_slate, brown).
 eyes(sister_lapis, brown).
 eyes(coach_raspberry, blue).
+eyes(president_amaranth, grey).
+eyes(dr_crimson, green).
+eyes(miss_saffron, hazel).
 
 
 % Weapon data
