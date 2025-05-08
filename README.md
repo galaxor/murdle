@@ -1,6 +1,6 @@
 This is a repo where I learn how to write in Prolog by writing programs to solve the daily puzzle game [Murdle](https://murdle.com).
 
-The file `murdle.pl` has predicates we use in figuring the solution, as well as unchanging facts about the various suspects and weapons who may appear in each puzzle.  At least, I think that if a particular suspect appears in a puzzle, they'll always have the same biographical facts.  I only put in enough facts to solve a particular day's challenge.
+The file `murdle.pl` has rules we use in figuring the solution, as well as facts about the various suspects and weapons who may appear in each puzzle.  I believe that if a particular suspect appears in a puzzle, they'll always have the same biographical facts.  Each day, I only add enough facts to solve a particular day's challenge, but eventually, the database of facts will be complete (if the facts work like I think they do).
 
 Then the various `murdle-YYYY-MM-DD.pl` files have the particular clues to solve a particular day's puzzle.
 
@@ -8,7 +8,7 @@ To run this, start up your prolog interpreter (I'm using [GNU Prolog](http://gpr
 
 From the `?-` prompt, load the day's puzzle and run `murdler(P, W, L).` to solve the puzzle.  P will be the suspect, W will be the weapon, and L will be the location.
 
-Here's a sample run.  I've bolded the stuff you have to type.
+Here's a sample run.
 
 ```
 GNU Prolog 1.5.0 (64 bits)
