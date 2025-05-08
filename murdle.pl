@@ -9,6 +9,8 @@ left_shorter(P1, P2) :-
   height(P1, [F1, I1]), height(P2, [F2, I2]), (F1 < F2);
   height(P1, [F1, I1]), height(P2, [F2, I2]), F1==F2, I1 < I2.
 
+shortest([P|[]], P).
+shortest([P|[P1|T]], M) :- left_shorter(P, P1), shortest([P|T], M); same_height(P, P1), shortest([P|T], M); left_taller(P, P1), shortest([P1|T], M).
 
 tallest([P|[]], P).
 tallest([P|[P1|T]], M) :- tallest([P|T], M), left_taller(P, P1); tallest([P|T], M), same_height(P, P1); tallest([P1|T], M), left_shorter(P, P1).
@@ -48,26 +50,38 @@ right_handed(silverton_the_legend).
 left_handed(signor_emerald).
 left_handed(mx_tangerine).
 
-height(president_amaranth, [5,10]).
-height(vice_president_mauve, [5,8]).
 height(babyface_blue, [7,8]).
-height(silverton_the_legend, [6,4]).
-height(signor_emerald, [5,8]).
-height(mx_tangerine, [5,5]).
+height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
+height(earl_grey, [5,9]).
+height(lady_violet, [5,0]).
+height(mayor_honey, [6,0]).
 height(miss_saffron, [5,2]).
+height(mx_tangerine, [5,5]).
+height(president_amaranth, [5,10]).
+height(signor_emerald, [5,8]).
+height(silverton_the_legend, [6,4]).
+height(vice_president_mauve, [5,8]).
 
+sign(agent_fuchsia, virgo).
+sign(deacon_verdigris, leo).
+sign(earl_grey, capricorn).
+sign(father_mango, taurus).
+sign(lady_violet, virgo).
+sign(mayor_honey, scorpio).
 sign(mx_tangerine, pisces).
 sign(sir_rulean, leo).
-sign(father_mango, taurus).
-sign(agent_fuchsia, virgo).
 
 eyes(captain_slate, brown).
-eyes(sister_lapis, brown).
 eyes(coach_raspberry, blue).
-eyes(president_amaranth, grey).
+eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
+eyes(earl_grey, brown).
+eyes(lady_violet, blue).
+eyes(mayor_honey, hazel).
 eyes(miss_saffron, hazel).
+eyes(president_amaranth, grey).
+eyes(sister_lapis, brown).
 
 
 % Weapon data
