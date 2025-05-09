@@ -23,7 +23,7 @@ second_tallest(People, Person) :-
   height(Person, SecondHeight)
 .
 
-% Some predicates for "one of these is a lie".
+% Some rules for "one of these is a lie".
 % I typed this into the repl, and I got that L = [e].
 %    findall(X, (X=e, \+member(X, [a,b,c])), L).
 % This could be used if a person says "Mx Tangerine was not at the clubhouse",
@@ -85,18 +85,39 @@ eyes(sister_lapis, brown).
 
 
 % Weapon data
-medium_weight(bottle).
-medium_weight(cake).
-medium_weight(dagger).
-light_weight(key).
-light_weight(shiv).
+heavy_weight(crystal_ball).
+heavy_weight(golf_cart).
+heavy_weight(lawyer).
+heavy_weight(stage_light).
 light_weight(cufflinks).
 light_weight(gloves).
-heavy_weight(lawyer).
-heavy_weight(crystal_ball).
+light_weight(key).
+light_weight(shiv).
+medium_weight(award).
+medium_weight(bottle).
+medium_weight(cake).
+medium_weight(camera).
+medium_weight(clapboard).
+medium_weight(dagger).
+
+made_of(award, metal).
+made_of(camera, glass).
+made_of(camera, metal).
+made_of(camera, plastic).
+made_of(clapboard, wood).
+made_of(golf_cart, metal).
+made_of(golf_cart, plastic).
+made_of(golf_cart, rubber).
+made_of(stage_light, glass).
+made_of(stage_light, metal).
 
 
 % Location data
+indoors(locked_stage).
+indoors(observatory).
+indoors(watertower_bar_grill).
+outdoors(city_backlot).
+outdoors(entrance_gate).
 outdoors(hedge_maze).
 outdoors(minigolf_course).
-indoors(observatory).
+outdoors(statue_of_midnight).
