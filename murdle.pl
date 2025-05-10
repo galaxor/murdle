@@ -72,6 +72,8 @@ sign(mayor_honey, scorpio).
 sign(mx_tangerine, pisces).
 sign(sir_rulean, leo).
 
+eyes(bishop_azure, brown).
+eyes(brother_brownstone, brown).
 eyes(captain_slate, brown).
 eyes(coach_raspberry, blue).
 eyes(deacon_verdigris, blue).
@@ -79,9 +81,16 @@ eyes(dr_crimson, green).
 eyes(earl_grey, brown).
 eyes(lady_violet, blue).
 eyes(mayor_honey, hazel).
+eyes(miss_ruby, green).
 eyes(miss_saffron, hazel).
 eyes(president_amaranth, grey).
+eyes(secretary_celadon, green).
 eyes(sister_lapis, brown).
+
+hair(bishop_azure, brown).
+hair(brother_brownstone, brown).
+hair(miss_ruby, red).
+hair(secretary_celadon, brown).
 
 
 % Weapon data
