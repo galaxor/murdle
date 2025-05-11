@@ -1,12 +1,12 @@
 % Reasoning about height.
 left_taller(P1, P2) :- 
-  height(P1, [F1, I1]), height(P2, [F2, I2]), (F1 > F2);
+  height(P1, [F1, _]), height(P2, [F2, _]), (F1 > F2);
   height(P1, [F1, I1]), height(P2, [F2, I2]), F1==F2, I1 > I2.
 
 same_height(P1, P2) :- height(P1, [F1, I1]), height(P2, [F2, I2]), F1 == F2, I1 == I2, P1 \== P2.
 
 left_shorter(P1, P2) :- 
-  height(P1, [F1, I1]), height(P2, [F2, I2]), (F1 < F2);
+  height(P1, [F1, _]), height(P2, [F2, _]), (F1 < F2);
   height(P1, [F1, I1]), height(P2, [F2, I2]), F1==F2, I1 < I2.
 
 shortest([P|[]], P).
