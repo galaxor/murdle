@@ -13,7 +13,7 @@ shortest([P|[]], P).
 shortest([P|[P1|T]], M) :- left_shorter(P, P1), shortest([P|T], M); same_height(P, P1), shortest([P|T], M); left_taller(P, P1), shortest([P1|T], M).
 
 tallest([P|[]], P).
-tallest([P|[P1|T]], M) :- tallest([P|T], M), left_taller(P, P1); tallest([P|T], M), same_height(P, P1); tallest([P1|T], M), left_shorter(P, P1).
+tallest([P|[P1|T]], M) :- left_taller(P, P1), tallest([P|T], M); same_height(P, P1), tallest([P|T], M); left_shorter(P, P1), tallest([P1|T], M).
 
 second_tallest(People, Person) :- 
   findall(H, (member(P, People), height(P, H)), Heights),
@@ -59,8 +59,11 @@ height(mayor_honey, [6,0]).
 height(miss_saffron, [5,2]).
 height(mx_tangerine, [5,5]).
 height(president_amaranth, [5,10]).
+height(principal_applegreen, [5,11]).
+height(secretary_celadon, [5,6]).
 height(signor_emerald, [5,8]).
 height(silverton_the_legend, [6,4]).
+height(sister_lapis, [5,2]).
 height(vice_president_mauve, [5,8]).
 
 sign(agent_fuchsia, virgo).
@@ -89,8 +92,13 @@ eyes(sister_lapis, brown).
 
 hair(bishop_azure, brown).
 hair(brother_brownstone, brown).
+hair(dr_crimson, red).
+hair(lady_violet, blond).
 hair(miss_ruby, red).
+hair(mx_tangerine, blond).
+hair(principal_applegreen, none).
 hair(secretary_celadon, brown).
+hair(sister_lapis, brown).
 
 
 % Weapon data
