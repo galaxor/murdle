@@ -118,15 +118,20 @@ medium_weight(clapboard).
 medium_weight(dagger).
 
 made_of(award, metal).
+made_of(brick, clay).
 made_of(camera, glass).
 made_of(camera, metal).
 made_of(camera, plastic).
 made_of(clapboard, wood).
+made_of(climbing_axe, metal).
+made_of(climbing_axe, wood).
+made_of(corgi_stampede, corgis).
 made_of(golf_cart, metal).
 made_of(golf_cart, plastic).
 made_of(golf_cart, rubber).
 made_of(stage_light, glass).
 made_of(stage_light, metal).
+made_of(venemous_spider, live_animal).
 
 
 % Location data
