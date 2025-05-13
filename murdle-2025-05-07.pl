@@ -27,24 +27,12 @@ solution(L, Liar) :-
     (\+member([SecondTallest, axe, _], L)),
   
   % Statements
-  (
-    (Liar=president_amaranth,
-     \+member([_, karate_hands, ancient_ruins], L),
-     member([president_amaranth, bear_trap, _], L),
-     member([president_amaranth, _, docks], L)
-    );
-
-    (Liar=dr_crimson,
-     member([_, karate_hands, ancient_ruins], L),
-     \+member([president_amaranth, bear_trap, _], L),
-     member([president_amaranth, _, docks], L)
-    );
-
-    (Liar=miss_saffron,
-     member([_, karate_hands, ancient_ruins], L),
-     member([president_amaranth, bear_trap, _], L),
-     \+member([president_amaranth, _, docks], L)
-    )
+  statements([president_amaranth, dr_crimson, miss_saffron],
+    [member([_, karate_hands_ancient_ruins], L),
+      member([president_amaranth, bear_trap, _], L),
+      member([president_amaranth, _, docks], L)
+    ],
+    Liar
   )
 .
 

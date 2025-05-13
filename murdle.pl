@@ -18,14 +18,14 @@ tallest([P|[P1|T]], M) :- left_taller(P, P1), tallest([P|T], M); same_height(P, 
 second_tallest(People, Person) :- 
   findall(H, (member(P, People), height(P, H)), Heights),
   sort(Heights, SortedHeights),
-  nth(2, SortedHeights, SecondHeight),
+  nth1(2, SortedHeights, SecondHeight),
   member(Person, People),
   height(Person, SecondHeight)
 .
 
 % include/3 is in SWI-Prolog, but not in gprolog.
 % Define a polyfill here, I guess??
-include(Goal, [], []).
+include(_, [], []).
 include(Goal, [A|Rest], [A|TrueRest]) :- call(Goal, A), include(Goal, Rest, TrueRest).
 include(Goal, [A|Rest], TrueRest) :- \+call(Goal, A), include(Goal, Rest, TrueRest).
 
@@ -34,6 +34,17 @@ include(Goal, [A|Rest], TrueRest) :- \+call(Goal, A), include(Goal, Rest, TrueRe
 one_is_lie(StatementList) :- include(call, StatementList, TrueStatements), 
   length(StatementList, NumStatements), length(TrueStatements, NumTrueStatements),
   NumStatements =:= NumTrueStatements + 1
+.
+
+% If exactly one statement is false, find the liar.
+statements([_], [Statement], _) :- call(Statement), !, fail.
+statements([Liar], [Statement], Liar) :- \+call(Statement), !.
+statements([Speaker|_], [Statement|StatementList], Liar) :- 
+  \+call(Statement), Speaker=Liar,
+  include(call, StatementList, TrueStatementList), length(TrueStatementList) =:= length(StatementList)
+.
+statements([_|SpeakerList], [Statement|StatementList], Liar) :-
+  call(Statement), statements(SpeakerList, StatementList, Liar)
 .
 
 
