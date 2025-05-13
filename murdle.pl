@@ -25,7 +25,7 @@ second_tallest(People, Person) :-
 
 % include/3 is in SWI-Prolog, but not in gprolog.
 % Define a polyfill here, I guess??
-include(Goal, [], []).
+include(_, [], []).
 include(Goal, [A|Rest], [A|TrueRest]) :- call(Goal, A), include(Goal, Rest, TrueRest).
 include(Goal, [A|Rest], TrueRest) :- \+call(Goal, A), include(Goal, Rest, TrueRest).
 
@@ -83,6 +83,8 @@ eyes(coach_raspberry, blue).
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
 eyes(earl_grey, brown).
+eyes(father_mango, brown).
+eyes(grandmaster_rose, brown).
 eyes(lady_violet, blue).
 eyes(mayor_honey, hazel).
 eyes(miss_ruby, green).
@@ -119,6 +121,7 @@ medium_weight(clapboard).
 medium_weight(dagger).
 
 made_of(award, metal).
+made_of(brick_of_coal, rock).
 made_of(brick, clay).
 made_of(camera, glass).
 made_of(camera, metal).
@@ -130,9 +133,12 @@ made_of(corgi_stampede, corgis).
 made_of(golf_cart, metal).
 made_of(golf_cart, plastic).
 made_of(golf_cart, rubber).
+made_of(italian_knife, leather).
+made_of(italian_knife, metal).
 made_of(stage_light, glass).
 made_of(stage_light, metal).
 made_of(venemous_spider, live_animal).
+made_of(wine, glass).
 
 
 % Location data
