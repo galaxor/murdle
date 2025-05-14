@@ -84,6 +84,7 @@ sign(mayor_honey, scorpio).
 sign(mx_tangerine, pisces).
 sign(sir_rulean, leo).
 
+eyes(agent_fuchsia, brown).
 eyes(bishop_azure, brown).
 eyes(brother_brownstone, brown).
 eyes(captain_slate, brown).
@@ -100,6 +101,7 @@ eyes(miss_saffron, hazel).
 eyes(president_amaranth, grey).
 eyes(secretary_celadon, green).
 eyes(sister_lapis, brown).
+eyes(viscount_eminence, grey).
 
 hair(bishop_azure, brown).
 hair(brother_brownstone, brown).
