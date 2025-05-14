@@ -25,9 +25,9 @@ second_tallest(People, Person) :-
 
 % include/3 is in SWI-Prolog, but not in gprolog.
 % Define a polyfill here, I guess??
-% include(_, [], []).
-% include(Goal, [A|Rest], [A|TrueRest]) :- call(Goal, A), include(Goal, Rest, TrueRest).
-% include(Goal, [A|Rest], TrueRest) :- \+call(Goal, A), include(Goal, Rest, TrueRest).
+include(_, [], []).
+include(Goal, [A|Rest], [A|TrueRest]) :- call(Goal, A), include(Goal, Rest, TrueRest).
+include(Goal, [A|Rest], TrueRest) :- \+call(Goal, A), include(Goal, Rest, TrueRest).
 
 
 % Succeeds if exactly one of the statements is a lie.
