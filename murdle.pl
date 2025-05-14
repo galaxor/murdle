@@ -36,12 +36,34 @@ one_is_lie(StatementList) :- include(call, StatementList, TrueStatements),
   NumStatements =:= NumTrueStatements + 1
 .
 
-speakers_statements_liar([], [], _) :- false.
-speakers_statements_liar([Speaker|Speakers], [Statement|Statements], Liar) :-
+% Statements are of the form: statement(Speaker, TheirClaim).
+
+% Given a list of statements like
+%   [statement(coach_raspberry, sky(blue)), statement(dame_obsidian, delicious(soup))],
+% L will become just the statement part, with the speaker extracted:
+% In the example above, L would be
+%   [sky(blue), delicious(soup)].
+% The truth of the statements won't be checked.
+statements_list([], []).
+statements_list([statement(_, Statement)|StatementsWithSpeaker], L) :-
+  L=[Statement|FurtherStatements], statements_list(StatementsWithSpeaker, FurtherStatements)
+.
+
+% Given a list of statements like
+%   [statement(coach_raspberry, sky(blue)), statement(dame_obsidian, delicious(soup))],
+% Liar will become the speaker of the single statement that is false.
+% For example, if the soup is not, in fact, delicious, then delicious(soup) fails, and Liar=dame_obsidian.
+% If there is more than one liar, then the predicate will fail.
+% If there are zero liars, then the predicate will fail.
+statements_liar([], _) :- false.
+statements_liar([statement(Speaker, Statement)|StatementsWithSpeaker], Liar) :-
     % If the first statement is a lie and all the others are true.
-  (\+call(Statement), include(call, Statements, Truths), length(Truths, N), length(Statements, N), Liar=Speaker)
+  (\+call(Statement),
+    statements_list(StatementsWithSpeaker, Statements),
+    include(call, Statements, Truths), 
+    length(Truths, N), length(Statements, N), Liar=Speaker)
     % If the first statement is true, check the rest.
-  ; (call(Statement), speakers_statements_liar(Speakers, Statements, Liar))
+  ; (call(Statement), statements_liar(StatementsWithSpeaker, Liar))
 .
 
 
