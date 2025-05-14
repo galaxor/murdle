@@ -37,34 +37,14 @@ solution(L, Liar) :-
   member([brother_brownstone, _, _, escape_blackmail], L),
   \+member([_, walking_stick, _, rage_with_jealousy], L),
   member([bishop_azure, _, _, hide_an_affair], L),
-  (
-    (Liar=secretary_celadon, 
-      \+member([brother_brownstone, walking_stick, _, _], L),
+  speakers_statements_liar(
+    [secretary_celadon, brother_brownstone, bishop_azure, miss_ruby],
+    [member([brother_brownstone, walking_stick, _, _], L),
       \+member([brother_brownstone, newspaper_crowbar, _, _], L),
       member([_, walking_stick, five_star_restaurant, _], L),
       member([_, walking_stick, five_star_restaurant, _], L)
-    );
-
-    (Liar=brother_brownstone, 
-      member([brother_brownstone, walking_stick, _, _], L),
-      member([brother_brownstone, newspaper_crowbar, _, _], L),
-      member([_, walking_stick, five_star_restaurant, _], L),
-      member([_, walking_stick, five_star_restaurant, _], L)
-    );
-
-    (Liar=bishop_azure, 
-      member([brother_brownstone, walking_stick, _, _], L),
-      \+member([brother_brownstone, newspaper_crowbar, _, _], L),
-      \+member([_, walking_stick, five_star_restaurant, _], L),
-      member([_, walking_stick, five_star_restaurant, _], L)
-    );
-
-    (Liar=miss_ruby, 
-      member([brother_brownstone, walking_stick, _, _], L),
-      \+member([brother_brownstone, newspaper_crowbar, _, _], L),
-      member([_, walking_stick, five_star_restaurant, _], L),
-      \+member([_, walking_stick, five_star_restaurant, _], L)
-    )
+    ],
+    Liar
   )
 .
 
