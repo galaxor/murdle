@@ -25,15 +25,23 @@ second_tallest(People, Person) :-
 
 % include/3 is in SWI-Prolog, but not in gprolog.
 % Define a polyfill here, I guess??
-include(_, [], []).
-include(Goal, [A|Rest], [A|TrueRest]) :- call(Goal, A), include(Goal, Rest, TrueRest).
-include(Goal, [A|Rest], TrueRest) :- \+call(Goal, A), include(Goal, Rest, TrueRest).
+% include(_, [], []).
+% include(Goal, [A|Rest], [A|TrueRest]) :- call(Goal, A), include(Goal, Rest, TrueRest).
+% include(Goal, [A|Rest], TrueRest) :- \+call(Goal, A), include(Goal, Rest, TrueRest).
 
 
 % Succeeds if exactly one of the statements is a lie.
 one_is_lie(StatementList) :- include(call, StatementList, TrueStatements), 
   length(StatementList, NumStatements), length(TrueStatements, NumTrueStatements),
   NumStatements =:= NumTrueStatements + 1
+.
+
+speakers_statements_liar([], [], _) :- false.
+speakers_statements_liar([Speaker|Speakers], [Statement|Statements], Liar) :-
+    % If the first statement is a lie and all the others are true.
+  (\+call(Statement), include(call, Statements, Truths), length(Truths, N), length(Statements, N), Liar=Speaker)
+    % If the first statement is true, check the rest.
+  ; (call(Statement), speakers_statements_liar(Speakers, Statements, Liar))
 .
 
 
