@@ -107,11 +107,13 @@ sign(mx_tangerine, pisces).
 sign(sir_rulean, leo).
 
 eyes(agent_fuchsia, brown).
+eyes(baron_maroon, hazel).
 eyes(bishop_azure, brown).
 eyes(brother_brownstone, brown).
 eyes(captain_slate, brown).
 eyes(coach_raspberry, blue).
 eyes(deacon_verdigris, blue).
+eyes(dean_glaucous, brown).
 eyes(dr_crimson, green).
 eyes(earl_grey, brown).
 eyes(father_mango, brown).
@@ -120,7 +122,9 @@ eyes(lady_violet, blue).
 eyes(mayor_honey, hazel).
 eyes(miss_ruby, green).
 eyes(miss_saffron, hazel).
+eyes(officer_copper, blue).
 eyes(president_amaranth, grey).
+eyes(principal_applegreen, blue).
 eyes(secretary_celadon, green).
 eyes(sister_lapis, brown).
 eyes(viscount_eminence, grey).
@@ -139,11 +143,15 @@ hair(sister_lapis, brown).
 % Weapon data
 heavy_weight(crystal_ball).
 heavy_weight(golf_cart).
+heavy_weight(heavy_painting).
 heavy_weight(lawyer).
+heavy_weight(rare_vase).
 heavy_weight(stage_light).
 light_weight(cufflinks).
+light_weight(glass_of_wine).
 light_weight(gloves).
 light_weight(key).
+light_weight(poisoned_tea).
 light_weight(shiv).
 medium_weight(award).
 medium_weight(bottle).
@@ -162,16 +170,24 @@ made_of(clapboard, wood).
 made_of(climbing_axe, metal).
 made_of(climbing_axe, wood).
 made_of(corgi_stampede, corgis).
+made_of(glass_of_wine, alcohol).
+made_of(glass_of_wine, chemicals).
+made_of(glass_of_wine, glass).
 made_of(golf_cart, metal).
 made_of(golf_cart, plastic).
 made_of(golf_cart, rubber).
+made_of(heavy_painting, canvas).
+made_of(heavy_painting, paint).
+made_of(heavy_painting, wood).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
+made_of(poisoned_tea, ceramic).
+made_of(poisoned_tea, liquid).
+made_of(rare_vase, ceramic).
 made_of(stage_light, glass).
 made_of(stage_light, metal).
 made_of(venemous_spider, live_animal).
 made_of(wine, glass).
-
 
 % Location data
 indoors(locked_stage).
