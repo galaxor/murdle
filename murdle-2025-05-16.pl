@@ -29,8 +29,8 @@ solution(L) :-
   indoors(MxTangerineLocation), member([mx_tangerine, _, MxTangerineLocation], L),
   member([captain_slate, ordinary_brick, _], L),
   \+member([_, ordinary_brick, docks], L),
-  made_of(wood, CliffsWeapon), member([_, CliffsWeapon, cliffs], L),
-  eyes(HammerAndSicklePerson, blue), member([HammerAndSicklePerson, hammer_and_sickle], L),
+  made_of(CliffsWeapon, wood), member([_, CliffsWeapon, cliffs], L),
+  eyes(HammerAndSicklePerson, blue), member([HammerAndSicklePerson, hammer_and_sickle, _], L),
   one_is_lie([
     member([mx_tangerine, _, ancient_ruins], L),
     member([silverton_the_legend, _, haunted_grove], L)
