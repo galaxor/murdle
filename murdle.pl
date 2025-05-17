@@ -99,11 +99,15 @@ height(vice_president_mauve, [5,8]).
 
 sign(agent_fuchsia, virgo).
 sign(deacon_verdigris, leo).
+sign(deacon_verdigris, leo).
 sign(earl_grey, capricorn).
 sign(father_mango, taurus).
+sign(general_coffee, sagittarius).
 sign(lady_violet, virgo).
 sign(mayor_honey, scorpio).
+sign(miss_ruby, libra).
 sign(mx_tangerine, pisces).
+sign(secretary_celadon, leo).
 sign(sir_rulean, leo).
 
 eyes(agent_fuchsia, brown).
@@ -173,8 +177,10 @@ made_of(award, metal).
 made_of(axe, metal).
 made_of(axe, wood).
 made_of(bear_trap, metal).
-made_of(brick_of_coal, rock).
+made_of(boiling_pot, metal).
+made_of(boiling_pot, water).
 made_of(brick, clay).
+made_of(brick_of_coal, rock).
 made_of(camera, glass).
 made_of(camera, metal).
 made_of(camera, plastic).
@@ -194,6 +200,8 @@ made_of(heavy_painting, paint).
 made_of(heavy_painting, wood).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
+made_of(metal_straw, metal).
+made_of(metal_straw, wood).
 made_of(oar, wood).
 made_of(ordinary_brick, brick).
 made_of(poisoned_tea, ceramic).
@@ -203,6 +211,7 @@ made_of(stage_light, glass).
 made_of(stage_light, metal).
 made_of(venemous_spider, live_animal).
 made_of(wine, glass).
+
 
 % Location data
 indoors(locked_stage).
