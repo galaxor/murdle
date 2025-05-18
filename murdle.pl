@@ -82,6 +82,8 @@ left_handed(signor_emerald).
 left_handed(mx_tangerine).
 
 height(babyface_blue, [7,8]).
+height(brother_brownstone, [5,4]).
+height(coach_raspberry, [6,0]).
 height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
 height(earl_grey, [5,9]).
@@ -89,12 +91,14 @@ height(lady_violet, [5,0]).
 height(mayor_honey, [6,0]).
 height(miss_saffron, [5,2]).
 height(mx_tangerine, [5,5]).
+height(officer_copper, [5,5]).
 height(president_amaranth, [5,10]).
 height(principal_applegreen, [5,11]).
 height(secretary_celadon, [5,6]).
 height(signor_emerald, [5,8]).
 height(silverton_the_legend, [6,4]).
 height(sister_lapis, [5,2]).
+height(uncle_midnight, [5,8]).
 height(vice_president_mauve, [5,8]).
 
 sign(agent_fuchsia, virgo).
@@ -139,13 +143,17 @@ eyes(viscount_eminence, grey).
 
 hair(bishop_azure, brown).
 hair(brother_brownstone, brown).
+hair(coach_raspberry, blond).
+hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
 hair(lady_violet, blond).
 hair(miss_ruby, red).
 hair(mx_tangerine, blond).
+hair(officer_copper, blond).
 hair(principal_applegreen, none).
 hair(secretary_celadon, brown).
 hair(sister_lapis, brown).
+hair(uncle_midnight, brown).
 
 
 % Weapon data
@@ -171,7 +179,11 @@ medium_weight(cake).
 medium_weight(camera).
 medium_weight(clapboard).
 medium_weight(dagger).
+medium_weight(golden_handcuffs).
+medium_weight(gold_watch).
 medium_weight(ordinary_brick).
+medium_weight(rope_of_clothes).
+
 
 made_of(award, metal).
 made_of(axe, metal).
