@@ -147,11 +147,14 @@ hair(coach_raspberry, blond).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
 hair(lady_violet, blond).
+hair(mayor_honey, brown).
 hair(miss_ruby, red).
+hair(miss_saffron, blond).
 hair(mx_tangerine, blond).
 hair(officer_copper, blond).
 hair(principal_applegreen, none).
 hair(secretary_celadon, brown).
+hair(silverton_the_legend, silver).
 hair(sister_lapis, brown).
 hair(uncle_midnight, brown).
 
@@ -185,14 +188,15 @@ medium_weight(ordinary_brick).
 medium_weight(rope_of_clothes).
 
 
+made_of(ancient_anchor, metal).
 made_of(award, metal).
 made_of(axe, metal).
 made_of(axe, wood).
 made_of(bear_trap, metal).
 made_of(boiling_pot, metal).
 made_of(boiling_pot, water).
-made_of(brick, clay).
 made_of(brick_of_coal, rock).
+made_of(brick, clay).
 made_of(camera, glass).
 made_of(camera, metal).
 made_of(camera, plastic).
@@ -212,18 +216,21 @@ made_of(heavy_painting, paint).
 made_of(heavy_painting, wood).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
+made_of(karate_hands, hands).
 made_of(metal_straw, metal).
 made_of(metal_straw, wood).
 made_of(oar, wood).
 made_of(ordinary_brick, brick).
+made_of(poisoned_champagne, glass).
+made_of(poisoned_champagne, toxins).
 made_of(poisoned_tea, ceramic).
 made_of(poisoned_tea, liquid).
 made_of(rare_vase, ceramic).
 made_of(stage_light, glass).
 made_of(stage_light, metal).
+made_of(steering_wheel, wood).
 made_of(venemous_spider, live_animal).
 made_of(wine, glass).
-
 
 % Location data
 indoors(locked_stage).

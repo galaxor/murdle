@@ -4,9 +4,11 @@ The file `murdle.pl` has rules we use in figuring the solution, as well as facts
 
 Then the various `murdle-YYYY-MM-DD.pl` files have the particular clues to solve a particular day's puzzle.
 
-To run this, start up your prolog interpreter (I'm using [GNU Prolog](http://gprolog.org/).  I think [SWI-Prolog](https://www.swi-prolog.org/) might also be a solid choice, and in fact, perhaps a more full-featured choice).
+To run this, start up your prolog interpreter (I'm using [SWI-Prolog](https://www.swi-prolog.org/), but I'm trying to maintain compatibility with [GNU Prolog](http://gprolog.org/)).
 
-From the `?-` prompt, load the day's puzzle and run `murdler(P, W, L).` to solve the puzzle.  P will be the suspect, W will be the weapon, and L will be the location.
+From the `?-` prompt, load the day's puzzle and run the appropriate one of these commands:
+* `murdler(P, W, L).` to solve the puzzle.  P will be the suspect, W will be the weapon, and L will be the location.
+* If it's a puzzle that has motives, use `murdler(P, W, L, M)`, and M will be the motive.  
 
 Here's a sample run.
 
