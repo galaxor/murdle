@@ -74,12 +74,15 @@ statements_liar([statement(Speaker, Statement)|StatementsWithSpeaker], Liar) :-
 % weapons that exist.
 % I mean, assuming the info isn't randomly generated for each puzzle.
 
-right_handed(president_amaranth).
-right_handed(vice_president_mauve).
-right_handed(babyface_blue).
-right_handed(silverton_the_legend).
-left_handed(signor_emerald).
+left_handed(amazing_aureolin).
+left_handed(major_red).
 left_handed(mx_tangerine).
+left_handed(signor_emerald).
+right_handed(babyface_blue).
+right_handed(lady_violet).
+right_handed(president_amaranth).
+right_handed(silverton_the_legend).
+right_handed(vice_president_mauve).
 
 height(babyface_blue, [7,8]).
 height(brother_brownstone, [5,4]).
@@ -115,6 +118,7 @@ sign(secretary_celadon, leo).
 sign(sir_rulean, leo).
 
 eyes(agent_fuchsia, brown).
+eyes(amazing_aureolin, green).
 eyes(baron_maroon, hazel).
 eyes(bishop_azure, brown).
 eyes(brother_brownstone, brown).
@@ -128,6 +132,7 @@ eyes(earl_grey, brown).
 eyes(father_mango, brown).
 eyes(grandmaster_rose, brown).
 eyes(lady_violet, blue).
+eyes(major_red, brown).
 eyes(mayor_honey, hazel).
 eyes(miss_ruby, green).
 eyes(miss_saffron, hazel).
@@ -214,11 +219,13 @@ made_of(hammer_and_sickle, metal).
 made_of(heavy_painting, canvas).
 made_of(heavy_painting, paint).
 made_of(heavy_painting, wood).
+made_of(holy_relic, bone).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
 made_of(karate_hands, hands).
 made_of(metal_straw, metal).
 made_of(metal_straw, wood).
+made_of(murdle_volume_3, paper).
 made_of(oar, wood).
 made_of(ordinary_brick, brick).
 made_of(poisoned_champagne, glass).
@@ -231,6 +238,7 @@ made_of(stage_light, metal).
 made_of(steering_wheel, wood).
 made_of(venemous_spider, live_animal).
 made_of(wine, glass).
+made_of(yarn, wool).
 
 % Location data
 indoors(locked_stage).
