@@ -105,8 +105,10 @@ height(uncle_midnight, [5,8]).
 height(vice_president_mauve, [5,8]).
 
 sign(agent_fuchsia, virgo).
+sign(brother_brownstone, capricorn).
+sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
-sign(deacon_verdigris, leo).
+sign(dean_glaucous, virgo).
 sign(earl_grey, capricorn).
 sign(father_mango, taurus).
 sign(general_coffee, sagittarius).
