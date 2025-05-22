@@ -109,15 +109,19 @@ sign(brother_brownstone, capricorn).
 sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
 sign(dean_glaucous, virgo).
+sign(dr_crimson, aquarius).
 sign(earl_grey, capricorn).
 sign(father_mango, taurus).
 sign(general_coffee, sagittarius).
 sign(lady_violet, virgo).
+sign(lord_lavendar, virgo).
 sign(mayor_honey, scorpio).
 sign(miss_ruby, libra).
 sign(mx_tangerine, pisces).
 sign(secretary_celadon, leo).
 sign(sir_rulean, leo).
+sign(vice_president_mauve, taurus).
+
 
 eyes(agent_fuchsia, brown).
 eyes(amazing_aureolin, green).
@@ -134,6 +138,7 @@ eyes(earl_grey, brown).
 eyes(father_mango, brown).
 eyes(grandmaster_rose, brown).
 eyes(lady_violet, blue).
+eyes(lord_lavendar, green).
 eyes(major_red, brown).
 eyes(mayor_honey, hazel).
 eyes(miss_ruby, green).
@@ -146,6 +151,7 @@ eyes(secretary_celadon, green).
 eyes(silverton_the_legend, blue).
 eyes(sister_lapis, brown).
 eyes(uncle_midnight, blue).
+eyes(vice_president_mauve, brown).
 eyes(viscount_eminence, grey).
 
 hair(bishop_azure, brown).
@@ -174,8 +180,11 @@ heavy_weight(hammer_and_sickle).
 heavy_weight(heavy_painting).
 heavy_weight(lawyer).
 heavy_weight(oar).
+heavy_weight(old_heavy_tome).
 heavy_weight(rare_vase).
 heavy_weight(stage_light).
+light_weight(ancient_plague).
+light_weight(crazed_squirrel).
 light_weight(cufflinks).
 light_weight(glass_of_wine).
 light_weight(gloves).
@@ -192,6 +201,7 @@ medium_weight(dagger).
 medium_weight(golden_handcuffs).
 medium_weight(gold_watch).
 medium_weight(ordinary_brick).
+medium_weight(poisoned_goblet).
 medium_weight(rope_of_clothes).
 
 
