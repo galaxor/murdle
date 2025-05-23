@@ -5,37 +5,42 @@ solution(L) :-
   consult(murdle),
 
   % Who is there
-  L=[[dr_crimson, _, _],
-     [vice_president_mauve, _, _],
-     [lord_lavendar, _, _],
-     [earl_grey, _, _]],
+  L=[[secretary_celadon, _, _],
+     [principal_applegreen, _, _],
+     [grandmaster_rose, _, _],
+     [signor_emerald, _, _],
+     [officer_copper, _, _]],
 
   % What are the weapons
-  member([_, crazed_squirrel, _], L),
-  member([_, old_heavy_tome, _], L),
-  member([_, poisoned_goblet, _], L),
-  member([_, ancient_plague, _], L),
+  member([_, walking_stick, _], L),
+  member([_, climbing_rope, _], L),
+  member([_, murdle_volume_3, _], L),
+  member([_, snowglobe, _], L),
+  member([_, laptop, _], L),
 
   % Where are the locations
-  member([_, _, moat], L),
-  member([_, _, great_hall], L),
-  member([_, _, secret_chamber], L),
-  member([_, _, dungeon], L),
+  member([_, _, trailhead], L),
+  member([_, _, boutique_hotel], L),
+  member([_, _, five_star_restaurant], L),
+  member([_, _, real_estate_office], L),
+  member([_, _, gift_shop], L),
 
   % Clues.
-  \+member([dr_crimson, crazed_squirrel, _], L),
-  light_weight(VicePresidentMauveWeapon), member([vice_president_mauve, VicePresidentMauveWeapon, _], L),
-  member([lord_lavendar, old_heavy_tome, _], L),
-  sign(DungeonPerson, aquarius), member([DungeonPerson, _, dungeon], L),
-  eyes(GreatHallPerson, brown), member([GreatHallPerson, _, great_hall], L),
   one_is_lie([
-    member([_, poisoned_goblet, moat], L),
-    member([earl_grey, _, dungeon], L)
-  ])
+    member([_, walking_stick, five_star_restaurant], L),
+    member([_, climbing_rope, boutique_hotel], L)
+  ]),
+  made_of(RealEstateOfficeWeapon, fiber), member([_, RealEstateOfficeWeapon, real_estate_office], L),
+  hair(WalkingStickPerson, black), member([WalkingStickPerson, walking_stick, _], L),
+  made_of(SecretaryCeladonWeapon, fiber), member([secretary_celadon, SecretaryCeladonWeapon, _], L),
+  member([grandmaster_rose, snowglobe, _], L),
+  sign(TrailheadPerson, scorpio), member([TrailheadPerson, _, trailhead], L),
+  member([_, laptop, boutique_hotel], L),
+  \+member([officer_copper, laptop, _], L)
 .
 
 murdler(P, W, L) :-
   solution(S),
   member([P, W, L], S),
-  [P, W, L]=[_, _, secret_chamber]
+  [P, W, L]=[_, _, gift_shop]
 .

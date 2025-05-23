@@ -113,12 +113,16 @@ sign(dr_crimson, aquarius).
 sign(earl_grey, capricorn).
 sign(father_mango, taurus).
 sign(general_coffee, sagittarius).
+sign(grandmaster_rose, scorpio).
 sign(lady_violet, virgo).
 sign(lord_lavendar, virgo).
 sign(mayor_honey, scorpio).
 sign(miss_ruby, libra).
 sign(mx_tangerine, pisces).
+sign(officer_copper, aries).
+sign(principal_applegreen, libra).
 sign(secretary_celadon, leo).
+sign(signor_emerald, sagittarius).
 sign(sir_rulean, leo).
 sign(vice_president_mauve, taurus).
 
@@ -159,6 +163,7 @@ hair(brother_brownstone, brown).
 hair(coach_raspberry, blond).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
+hair(grandmaster_rose, brown).
 hair(lady_violet, blond).
 hair(mayor_honey, brown).
 hair(miss_ruby, red).
@@ -167,6 +172,7 @@ hair(mx_tangerine, blond).
 hair(officer_copper, blond).
 hair(principal_applegreen, none).
 hair(secretary_celadon, brown).
+hair(signor_emerald, black).
 hair(silverton_the_legend, silver).
 hair(sister_lapis, brown).
 hair(uncle_midnight, brown).
@@ -220,6 +226,7 @@ made_of(camera, plastic).
 made_of(clapboard, wood).
 made_of(climbing_axe, metal).
 made_of(climbing_axe, wood).
+made_of(climbing_rope, fiber).
 made_of(corgi_stampede, corgis).
 made_of(glass_of_wine, alcohol).
 made_of(glass_of_wine, chemicals).
@@ -235,6 +242,8 @@ made_of(holy_relic, bone).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
 made_of(karate_hands, hands).
+made_of(laptop, metal).
+made_of(laptop, plastic).
 made_of(metal_straw, metal).
 made_of(metal_straw, wood).
 made_of(murdle_volume_3, paper).
@@ -245,10 +254,14 @@ made_of(poisoned_champagne, toxins).
 made_of(poisoned_tea, ceramic).
 made_of(poisoned_tea, liquid).
 made_of(rare_vase, ceramic).
+made_of(snowglobe, glass).
+made_of(snowglobe, metal).
+made_of(snowglobe, water).
 made_of(stage_light, glass).
 made_of(stage_light, metal).
 made_of(steering_wheel, wood).
 made_of(venemous_spider, live_animal).
+made_of(walking_stick, metal).
 made_of(wine, glass).
 made_of(yarn, wool).
 
