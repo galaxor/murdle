@@ -5,42 +5,42 @@ solution(L) :-
   consult(murdle),
 
   % Who is there
-  L=[[captain_slate, _, _],
-     [mx_tangerine, _, _],
-     [chancellor_tuscany, _, _],
-     [uncle_midnight, _, _],
-     [silverton_the_legend, _, _]],
+  L=[[secretary_celadon, _, _],
+     [principal_applegreen, _, _],
+     [grandmaster_rose, _, _],
+     [signor_emerald, _, _],
+     [officer_copper, _, _]],
 
   % What are the weapons
-  member([_, ordinary_brick, _], L),
-  member([_, axe, _], L),
-  member([_, hammer_and_sickle, _], L),
-  member([_, bear_trap, _], L),
-  member([_, oar, _], L),
+  member([_, walking_stick, _], L),
+  member([_, climbing_rope, _], L),
+  member([_, murdle_volume_3, _], L),
+  member([_, snowglobe, _], L),
+  member([_, laptop, _], L),
 
   % Where are the locations
-  member([_, _, docks], L),
-  member([_, _, mysterious_mansion], L),
-  member([_, _, cliffs], L),
-  member([_, _, ancient_ruins], L),
-  member([_, _, haunted_grove], L),
+  member([_, _, trailhead], L),
+  member([_, _, boutique_hotel], L),
+  member([_, _, five_star_restaurant], L),
+  member([_, _, real_estate_office], L),
+  member([_, _, gift_shop], L),
 
   % Clues.
-  indoors(MxTangerineLocation), member([mx_tangerine, _, MxTangerineLocation], L),
-  member([captain_slate, ordinary_brick, _], L),
-  \+member([_, ordinary_brick, docks], L),
-  made_of(CliffsWeapon, wood), member([_, CliffsWeapon, cliffs], L),
-  eyes(HammerAndSicklePerson, blue), member([HammerAndSicklePerson, hammer_and_sickle, _], L),
   one_is_lie([
-    member([mx_tangerine, _, ancient_ruins], L),
-    member([silverton_the_legend, _, haunted_grove], L)
+    member([_, walking_stick, five_star_restaurant], L),
+    member([_, climbing_rope, boutique_hotel], L)
   ]),
-  medium_weight(MansionWeapon), member([_, MansionWeapon, mysterious_mansion], L),
-  member([uncle_midnight, _, cliffs], L)
+  made_of(RealEstateOfficeWeapon, fiber), member([_, RealEstateOfficeWeapon, real_estate_office], L),
+  hair(WalkingStickPerson, black), member([WalkingStickPerson, walking_stick, _], L),
+  made_of(SecretaryCeladonWeapon, fiber), member([secretary_celadon, SecretaryCeladonWeapon, _], L),
+  member([grandmaster_rose, snowglobe, _], L),
+  sign(TrailheadPerson, scorpio), member([TrailheadPerson, _, trailhead], L),
+  member([_, laptop, boutique_hotel], L),
+  \+member([officer_copper, laptop, _], L)
 .
 
 murdler(P, W, L) :-
   solution(S),
   member([P, W, L], S),
-  [P, W, L]=[_, oar, _]
+  [P, W, L]=[_, _, gift_shop]
 .
