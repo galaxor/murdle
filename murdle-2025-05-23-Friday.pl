@@ -34,7 +34,7 @@ solution(L) :-
   hair(WalkingStickPerson, black), member([WalkingStickPerson, walking_stick, _], L),
   made_of(SecretaryCeladonWeapon, fiber), member([secretary_celadon, SecretaryCeladonWeapon, _], L),
   member([grandmaster_rose, snowglobe, _], L),
-  sign(TrailheadPerson, scorpio), member([TrailheadPerson, _, trailhead], L),
+  birthday_sign(november, 17, TrailheadPersonSign), sign(TrailheadPerson, TrailheadPersonSign), member([TrailheadPerson, _, trailhead], L),
   member([_, laptop, boutique_hotel], L),
   \+member([officer_copper, laptop, _], L)
 .

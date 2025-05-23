@@ -66,6 +66,20 @@ statements_liar([statement(Speaker, Statement)|StatementsWithSpeaker], Liar) :-
   ; (call(Statement), statements_liar(StatementsWithSpeaker, Liar))
 .
 
+% What birthdays correspond to what signs?
+birthday_sign(Month, Day, aries) :- (Month=march, Day >= 21) ; (Month=april, Day =< 19).
+birthday_sign(Month, Day, taurus) :- (Month=april, Day >= 20) ; (Month=may, Day =< 20).
+birthday_sign(Month, Day, gemini) :- (Month=may, Day >= 21) ; (Month=june, Day =< 20).
+birthday_sign(Month, Day, cancer) :- (Month=june, Day >= 21) ; (Month=july, Day =< 22).
+birthday_sign(Month, Day, leo) :- (Month=july, Day >= 23) ; (Month=august, Day =< 22).
+birthday_sign(Month, Day, virgo) :- (Month=august, Day >= 23) ; (Month=september, Day =< 22).
+birthday_sign(Month, Day, libra) :- (Month=september, Day >= 23) ; (Month=october, Day =< 22).
+birthday_sign(Month, Day, scorpio) :- (Month=october, Day >= 23) ; (Month=november, Day =< 21).
+birthday_sign(Month, Day, sagittarius) :- (Month=november, Day >= 22) ; (Month=december, Day =< 21).
+birthday_sign(Month, Day, capricorn) :- (Month=december, Day >= 22) ; (Month=january, Day =< 19).
+birthday_sign(Month, Day, aquarius) :- (Month=january, Day >= 20) ; (Month=february, Day =< 18).
+birthday_sign(Month, Day, pisces) :- (Month=february, Day >= 19) ; (Month=march, Day =< 20).
+
 
 % Biographical Info
 dossier(secretary_celadon,
