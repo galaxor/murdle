@@ -202,6 +202,28 @@ hair(uncle_midnight, brown).
 
 
 % Weapon data
+weapon_composition(walking_stick, 
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(climbing_rope,
+  weight(light),
+  made_of([fiber])
+).
+weapon_composition(murdle_volume_3,
+  weight(medium),
+  made_of([paper])
+).
+weapon_composition(snowglobe,
+  weight(medium),
+  made_of([metal, glass, water])
+).
+weapon_composition(laptop,
+  weight(medium),
+  made_of([metal, plastic])
+).
+
+heavy_weight(Weapon) :- weapon_composition(Weapon, weight(heavy), made_of(_)).
 heavy_weight(bear_trap).
 heavy_weight(crystal_ball).
 heavy_weight(golf_cart).
@@ -212,6 +234,8 @@ heavy_weight(oar).
 heavy_weight(old_heavy_tome).
 heavy_weight(rare_vase).
 heavy_weight(stage_light).
+
+light_weight(Weapon) :- weapon_composition(Weapon, weight(light), made_of(_)).
 light_weight(ancient_plague).
 light_weight(crazed_squirrel).
 light_weight(cufflinks).
@@ -220,6 +244,8 @@ light_weight(gloves).
 light_weight(key).
 light_weight(poisoned_tea).
 light_weight(shiv).
+
+medium_weight(Weapon) :- weapon_composition(Weapon, weight(medium), made_of(_)).
 medium_weight(award).
 medium_weight(axe).
 medium_weight(bottle).
@@ -233,7 +259,7 @@ medium_weight(ordinary_brick).
 medium_weight(poisoned_goblet).
 medium_weight(rope_of_clothes).
 
-
+made_of(Weapon, Substance) :- weapon_composition(Weapon, weight(_), made_of(Substances)), member(Substance, Substances).
 made_of(ancient_anchor, metal).
 made_of(award, metal).
 made_of(axe, metal).
@@ -249,7 +275,6 @@ made_of(camera, plastic).
 made_of(clapboard, wood).
 made_of(climbing_axe, metal).
 made_of(climbing_axe, wood).
-made_of(climbing_rope, fiber).
 made_of(corgi_stampede, corgis).
 made_of(glass_of_wine, alcohol).
 made_of(glass_of_wine, chemicals).
@@ -265,11 +290,8 @@ made_of(holy_relic, bone).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
 made_of(karate_hands, hands).
-made_of(laptop, metal).
-made_of(laptop, plastic).
 made_of(metal_straw, metal).
 made_of(metal_straw, wood).
-made_of(murdle_volume_3, paper).
 made_of(oar, wood).
 made_of(ordinary_brick, brick).
 made_of(poisoned_champagne, glass).
@@ -277,14 +299,10 @@ made_of(poisoned_champagne, toxins).
 made_of(poisoned_tea, ceramic).
 made_of(poisoned_tea, liquid).
 made_of(rare_vase, ceramic).
-made_of(snowglobe, glass).
-made_of(snowglobe, metal).
-made_of(snowglobe, water).
 made_of(stage_light, glass).
 made_of(stage_light, metal).
 made_of(steering_wheel, wood).
 made_of(venemous_spider, live_animal).
-made_of(walking_stick, metal).
 made_of(wine, glass).
 made_of(yarn, wool).
 
