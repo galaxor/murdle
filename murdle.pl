@@ -68,22 +68,59 @@ statements_liar([statement(Speaker, Statement)|StatementsWithSpeaker], Liar) :-
 
 
 % Biographical Info
-% I wonder if this information is always the same for each of these people.
-% I'll add to this as each day's clues make the info relevant.  Eventually,
-% I'll have a full roster of info on all the people that exist and all the
-% weapons that exist.
-% I mean, assuming the info isn't randomly generated for each puzzle.
+dossier(secretary_celadon,
+  height(5,6),
+  handed(left),
+  eyes(green),
+  hair(brown),
+  sign(leo)
+).
 
+dossier(principal_applegreen,
+  height(5,11),
+  handed(right),
+  eyes(blue),
+  hair(none),
+  sign(libra)
+).
+
+dossier(grandmaster_rose,
+  height(5,7),
+  handed(left),
+  eyes(brown),
+  hair(brown),
+  sign(scorpio)
+).
+
+dossier(signor_emerald,
+  height(5,8),
+  handed(left),
+  eyes(brown),
+  hair(black),
+  sign(sagittarius)
+).
+
+dossier(officer_copper,
+  height(5,5),
+  handed(right),
+  eyes(blue),
+  hair(blond),
+  sign(aries)
+).
+
+left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(_), sign(_)).
 left_handed(amazing_aureolin).
 left_handed(major_red).
 left_handed(mx_tangerine).
-left_handed(signor_emerald).
+
+right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hair(_), sign(_)).
 right_handed(babyface_blue).
 right_handed(lady_violet).
 right_handed(president_amaranth).
 right_handed(silverton_the_legend).
 right_handed(vice_president_mauve).
 
+height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
 height(babyface_blue, [7,8]).
 height(brother_brownstone, [5,4]).
 height(coach_raspberry, [6,0]).
@@ -94,16 +131,13 @@ height(lady_violet, [5,0]).
 height(mayor_honey, [6,0]).
 height(miss_saffron, [5,2]).
 height(mx_tangerine, [5,5]).
-height(officer_copper, [5,5]).
 height(president_amaranth, [5,10]).
-height(principal_applegreen, [5,11]).
-height(secretary_celadon, [5,6]).
-height(signor_emerald, [5,8]).
 height(silverton_the_legend, [6,4]).
 height(sister_lapis, [5,2]).
 height(uncle_midnight, [5,8]).
 height(vice_president_mauve, [5,8]).
 
+sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
 sign(agent_fuchsia, virgo).
 sign(brother_brownstone, capricorn).
 sign(dame_obsidian, leo).
@@ -113,20 +147,17 @@ sign(dr_crimson, aquarius).
 sign(earl_grey, capricorn).
 sign(father_mango, taurus).
 sign(general_coffee, sagittarius).
-sign(grandmaster_rose, scorpio).
 sign(lady_violet, virgo).
 sign(lord_lavendar, virgo).
 sign(mayor_honey, scorpio).
 sign(miss_ruby, libra).
 sign(mx_tangerine, pisces).
-sign(officer_copper, aries).
-sign(principal_applegreen, libra).
 sign(secretary_celadon, leo).
-sign(signor_emerald, sagittarius).
 sign(sir_rulean, leo).
 sign(vice_president_mauve, taurus).
 
 
+eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
 eyes(agent_fuchsia, brown).
 eyes(amazing_aureolin, green).
 eyes(baron_maroon, hazel).
@@ -140,7 +171,6 @@ eyes(dean_glaucous, brown).
 eyes(dr_crimson, green).
 eyes(earl_grey, brown).
 eyes(father_mango, brown).
-eyes(grandmaster_rose, brown).
 eyes(lady_violet, blue).
 eyes(lord_lavendar, green).
 eyes(major_red, brown).
@@ -148,31 +178,24 @@ eyes(mayor_honey, hazel).
 eyes(miss_ruby, green).
 eyes(miss_saffron, hazel).
 eyes(mx_tangerine, hazel).
-eyes(officer_copper, blue).
 eyes(president_amaranth, grey).
-eyes(principal_applegreen, blue).
-eyes(secretary_celadon, green).
 eyes(silverton_the_legend, blue).
 eyes(sister_lapis, brown).
 eyes(uncle_midnight, blue).
 eyes(vice_president_mauve, brown).
 eyes(viscount_eminence, grey).
 
+hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
 hair(bishop_azure, brown).
 hair(brother_brownstone, brown).
 hair(coach_raspberry, blond).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
-hair(grandmaster_rose, brown).
 hair(lady_violet, blond).
 hair(mayor_honey, brown).
 hair(miss_ruby, red).
 hair(miss_saffron, blond).
 hair(mx_tangerine, blond).
-hair(officer_copper, blond).
-hair(principal_applegreen, none).
-hair(secretary_celadon, brown).
-hair(signor_emerald, black).
 hair(silverton_the_legend, silver).
 hair(sister_lapis, brown).
 hair(uncle_midnight, brown).
