@@ -122,10 +122,42 @@ dossier(officer_copper,
   sign(aries)
 ).
 
+dossier(coach_raspberry,
+  height(6,0),
+  handed(left),
+  eyes(blue),
+  hair(blond),
+  sign(aries)
+).
+
+dossier(baron_maroon,
+  height(6,2),
+  handed(right),
+  eyes(hazel),
+  hair(red),
+  sign(scorpio)
+).
+
+dossier(captain_slate,
+  height(5,5),
+  handed(left),
+  eyes(brown),
+  hair(brown),
+  sign(aquarius)
+).
+
+dossier(mx_tangerine,
+  height(5,5),
+  handed(left),
+  eyes(hazel),
+  hair(blond),
+  sign(pisces)
+).
+
+
 left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(_), sign(_)).
 left_handed(amazing_aureolin).
 left_handed(major_red).
-left_handed(mx_tangerine).
 
 right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hair(_), sign(_)).
 right_handed(babyface_blue).
@@ -137,14 +169,12 @@ right_handed(vice_president_mauve).
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
 height(babyface_blue, [7,8]).
 height(brother_brownstone, [5,4]).
-height(coach_raspberry, [6,0]).
 height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
 height(earl_grey, [5,9]).
 height(lady_violet, [5,0]).
 height(mayor_honey, [6,0]).
 height(miss_saffron, [5,2]).
-height(mx_tangerine, [5,5]).
 height(president_amaranth, [5,10]).
 height(silverton_the_legend, [6,4]).
 height(sister_lapis, [5,2]).
@@ -165,7 +195,6 @@ sign(lady_violet, virgo).
 sign(lord_lavendar, virgo).
 sign(mayor_honey, scorpio).
 sign(miss_ruby, libra).
-sign(mx_tangerine, pisces).
 sign(secretary_celadon, leo).
 sign(sir_rulean, leo).
 sign(vice_president_mauve, taurus).
@@ -174,12 +203,9 @@ sign(vice_president_mauve, taurus).
 eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
 eyes(agent_fuchsia, brown).
 eyes(amazing_aureolin, green).
-eyes(baron_maroon, hazel).
 eyes(bishop_azure, brown).
 eyes(brother_brownstone, brown).
-eyes(captain_slate, brown).
 eyes(chancellor_tuscany, green).
-eyes(coach_raspberry, blue).
 eyes(deacon_verdigris, blue).
 eyes(dean_glaucous, brown).
 eyes(dr_crimson, green).
@@ -191,7 +217,6 @@ eyes(major_red, brown).
 eyes(mayor_honey, hazel).
 eyes(miss_ruby, green).
 eyes(miss_saffron, hazel).
-eyes(mx_tangerine, hazel).
 eyes(president_amaranth, grey).
 eyes(silverton_the_legend, blue).
 eyes(sister_lapis, brown).
@@ -202,14 +227,12 @@ eyes(viscount_eminence, grey).
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
 hair(bishop_azure, brown).
 hair(brother_brownstone, brown).
-hair(coach_raspberry, blond).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
 hair(lady_violet, blond).
 hair(mayor_honey, brown).
 hair(miss_ruby, red).
 hair(miss_saffron, blond).
-hair(mx_tangerine, blond).
 hair(silverton_the_legend, silver).
 hair(sister_lapis, brown).
 hair(uncle_midnight, brown).
@@ -235,6 +258,22 @@ weapon_composition(snowglobe,
 weapon_composition(laptop,
   weight(medium),
   made_of([metal, plastic])
+).
+weapon_composition(trained_orangutan,
+  weight(heavy),
+  made_of([ape_stuff])
+).
+weapon_composition(magnifying_glass,
+  weight(medium),
+  made_of([metal, glass])
+).
+weapon_composition(booby_trapped_fedora,
+  weight(medium),
+  made_of([redacted])
+).
+weapon_composition(antique_chess_clock,
+  weight(heavy),
+  made_of([wood, metal])
 ).
 
 heavy_weight(Weapon) :- weapon_composition(Weapon, weight(heavy), made_of(_)).
