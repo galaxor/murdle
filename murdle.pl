@@ -210,6 +210,22 @@ dossier(duchess_of_vermillion,
   sign(pisces)
 ).
 
+dossier(uncle_midnight,
+  height(5,8),
+  handed(left),
+  eyes(blue),
+  hair(brown),
+  sign(sagittarius)
+).
+
+dossier(sister_lapis,
+  height(5,2),
+  handed(right),
+  eyes(brown),
+  hair(brown),
+  sign(cancer)
+).
+
 
 left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(_), sign(_)).
 left_handed(major_red).
@@ -231,8 +247,6 @@ height(lady_violet, [5,0]).
 height(miss_saffron, [5,2]).
 height(president_amaranth, [5,10]).
 height(silverton_the_legend, [6,4]).
-height(sister_lapis, [5,2]).
-height(uncle_midnight, [5,8]).
 height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
@@ -264,8 +278,6 @@ eyes(major_red, brown).
 eyes(miss_saffron, hazel).
 eyes(president_amaranth, grey).
 eyes(silverton_the_legend, blue).
-eyes(sister_lapis, brown).
-eyes(uncle_midnight, blue).
 eyes(vice_president_mauve, brown).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
@@ -276,8 +288,6 @@ hair(dr_crimson, red).
 hair(lady_violet, blond).
 hair(miss_saffron, blond).
 hair(silverton_the_legend, silver).
-hair(sister_lapis, brown).
-hair(uncle_midnight, brown).
 
 
 % Weapon data
@@ -344,7 +354,19 @@ weapon_composition(rope_of_clothes,
 ).
 weapon_composition(hammer_and_sickle,
   weight(heavy),
-  made_of(metal)
+  made_of([metal])
+).
+weapon_composition(hyper_allergenic_oil,
+  weight(light),
+  made_of([oil])
+).
+weapon_composition(crystal_dagger,
+  weight(medium),
+  made_of([crystal])
+).
+weapon_composition(ghost_detector,
+  weight(medium),
+  made_of([metal, tech])
 ).
   
 
