@@ -186,7 +186,29 @@ dossier(lord_lavendar,
   sign(virgo)
 ).
 
+dossier(miss_ruby,
+  height(5,6),
+  handed(right),
+  eyes(green),
+  hair(red),
+  sign(libra)
+).
 
+dossier(viscount_eminence,
+  height(5,2),
+  handed(left),
+  eyes(grey),
+  hair(brown),
+  sign(pisces)
+).
+
+dossier(duchess_of_vermillion,
+  height(5,9),
+  handed(left),
+  eyes(grey),
+  hair(white),
+  sign(pisces)
+).
 
 
 left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(_), sign(_)).
@@ -223,7 +245,6 @@ sign(earl_grey, capricorn).
 sign(father_mango, taurus).
 sign(general_coffee, sagittarius).
 sign(lady_violet, virgo).
-sign(miss_ruby, libra).
 sign(secretary_celadon, leo).
 sign(sir_rulean, leo).
 sign(vice_president_mauve, taurus).
@@ -240,14 +261,12 @@ eyes(earl_grey, brown).
 eyes(father_mango, brown).
 eyes(lady_violet, blue).
 eyes(major_red, brown).
-eyes(miss_ruby, green).
 eyes(miss_saffron, hazel).
 eyes(president_amaranth, grey).
 eyes(silverton_the_legend, blue).
 eyes(sister_lapis, brown).
 eyes(uncle_midnight, blue).
 eyes(vice_president_mauve, brown).
-eyes(viscount_eminence, grey).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
 hair(bishop_azure, brown).
@@ -255,7 +274,6 @@ hair(brother_brownstone, brown).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
 hair(lady_violet, blond).
-hair(miss_ruby, red).
 hair(miss_saffron, blond).
 hair(silverton_the_legend, silver).
 hair(sister_lapis, brown).
@@ -324,12 +342,16 @@ weapon_composition(rope_of_clothes,
   weight(medium),
   made_of([silk])
 ).
+weapon_composition(hammer_and_sickle,
+  weight(heavy),
+  made_of(metal)
+).
+  
 
 heavy_weight(Weapon) :- weapon_composition(Weapon, weight(heavy), made_of(_)).
 heavy_weight(bear_trap).
 heavy_weight(crystal_ball).
 heavy_weight(golf_cart).
-heavy_weight(hammer_and_sickle).
 heavy_weight(heavy_painting).
 heavy_weight(oar).
 heavy_weight(old_heavy_tome).
@@ -378,7 +400,6 @@ made_of(glass_of_wine, glass).
 made_of(golf_cart, metal).
 made_of(golf_cart, plastic).
 made_of(golf_cart, rubber).
-made_of(hammer_and_sickle, metal).
 made_of(heavy_painting, canvas).
 made_of(heavy_painting, paint).
 made_of(heavy_painting, wood).
