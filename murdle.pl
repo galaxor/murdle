@@ -226,19 +226,35 @@ dossier(sister_lapis,
   sign(cancer)
 ).
 
+dossier(babyface_blue,
+  height(7,8),
+  handed(right),
+  eyes(blue),
+  hair(blond),
+  sign(gemini)
+).
+
+dossier(chancellor_tuscany,
+  height(5,5),
+  handed(left),
+  eyes(green),
+  hair(grey),
+  sign(libra)
+).
+
+% End of dossiers
+
 
 left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(_), sign(_)).
 left_handed(major_red).
 
 right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hair(_), sign(_)).
-right_handed(babyface_blue).
 right_handed(lady_violet).
 right_handed(president_amaranth).
 right_handed(silverton_the_legend).
 right_handed(vice_president_mauve).
 
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
-height(babyface_blue, [7,8]).
 height(brother_brownstone, [5,4]).
 height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
@@ -268,7 +284,6 @@ eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair
 eyes(agent_fuchsia, brown).
 eyes(bishop_azure, brown).
 eyes(brother_brownstone, brown).
-eyes(chancellor_tuscany, green).
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
 eyes(earl_grey, brown).
@@ -368,6 +383,22 @@ weapon_composition(ghost_detector,
   weight(medium),
   made_of([metal, tech])
 ).
+weapon_composition(axe,
+  weight(medium),
+  made_of([metal, wood])
+).
+weapon_composition(chainsaw,
+  weight(heavy),
+  made_of([metal, plastic])
+).
+weapon_composition(angry_llama,
+  weight(heavy),
+  made_of([hooves, fur])
+).
+
+
+
+% End of weapon_composition
   
 
 heavy_weight(Weapon) :- weapon_composition(Weapon, weight(heavy), made_of(_)).
@@ -390,7 +421,6 @@ light_weight(poisoned_tea).
 
 medium_weight(Weapon) :- weapon_composition(Weapon, weight(medium), made_of(_)).
 medium_weight(award).
-medium_weight(axe).
 medium_weight(bottle).
 medium_weight(camera).
 medium_weight(clapboard).
@@ -402,8 +432,6 @@ medium_weight(poisoned_goblet).
 made_of(Weapon, Substance) :- weapon_composition(Weapon, weight(_), made_of(Substances)), member(Substance, Substances).
 made_of(ancient_anchor, metal).
 made_of(award, metal).
-made_of(axe, metal).
-made_of(axe, wood).
 made_of(bear_trap, metal).
 made_of(boiling_pot, metal).
 made_of(boiling_pot, water).
@@ -447,6 +475,7 @@ made_of(yarn, wool).
 
 % Location data
 indoors(locked_stage).
+indoors(meeting_house).
 indoors(mysterious_mansion).
 indoors(observatory).
 indoors(watertower_bar_grill).
@@ -457,5 +486,7 @@ outdoors(docks).
 outdoors(entrance_gate).
 outdoors(haunted_grove).
 outdoors(hedge_maze).
+outdoors(locked_gate).
 outdoors(minigolf_course).
 outdoors(statue_of_midnight).
+outdoors(stone_bridge).
