@@ -242,6 +242,30 @@ dossier(chancellor_tuscany,
   sign(libra)
 ).
 
+dossier(judge_pine,
+  height(5,6),
+  handed(right),
+  eyes(brown),
+  hair(black),
+  sign(taurus)
+).
+
+dossier(admiral_navy,
+  height(5,9),
+  handed(right),
+  eyes(blue),
+  hair(brown),
+  sign(cancer)
+).
+
+dossier(brother_brownstone,
+  height(5,4),
+  handed(left),
+  eyes(brown),
+  hair(brown),
+  sign(capricorn)
+).
+
 % End of dossiers
 
 
@@ -255,7 +279,6 @@ right_handed(silverton_the_legend).
 right_handed(vice_president_mauve).
 
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
-height(brother_brownstone, [5,4]).
 height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
 height(earl_grey, [5,9]).
@@ -267,7 +290,6 @@ height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
 sign(agent_fuchsia, virgo).
-sign(brother_brownstone, capricorn).
 sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
 sign(dr_crimson, aquarius).
@@ -283,7 +305,6 @@ sign(vice_president_mauve, taurus).
 eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
 eyes(agent_fuchsia, brown).
 eyes(bishop_azure, brown).
-eyes(brother_brownstone, brown).
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
 eyes(earl_grey, brown).
@@ -297,7 +318,6 @@ eyes(vice_president_mauve, brown).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
 hair(bishop_azure, brown).
-hair(brother_brownstone, brown).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
 hair(lady_violet, blond).
@@ -395,7 +415,22 @@ weapon_composition(angry_llama,
   weight(heavy),
   made_of([hooves, fur])
 ).
-
+weapon_composition(clapboard,
+  weight(medium),
+  made_of([wood])
+).
+weapon_composition(prop_knife,
+  weight(light),
+  made_of([metal, rubber])
+).
+weapon_composition(toxic_makeup,
+  weight(light),
+  made_of([toxins])
+).
+weapon_composition(antique_typewriter,
+  weight(heavy),
+  made_of([metal])
+).
 
 
 % End of weapon_composition
@@ -423,7 +458,6 @@ medium_weight(Weapon) :- weapon_composition(Weapon, weight(medium), made_of(_)).
 medium_weight(award).
 medium_weight(bottle).
 medium_weight(camera).
-medium_weight(clapboard).
 medium_weight(dagger).
 medium_weight(gold_watch).
 medium_weight(ordinary_brick).
@@ -440,7 +474,6 @@ made_of(brick, clay).
 made_of(camera, glass).
 made_of(camera, metal).
 made_of(camera, plastic).
-made_of(clapboard, wood).
 made_of(climbing_axe, metal).
 made_of(climbing_axe, wood).
 made_of(corgi_stampede, corgis).
@@ -475,9 +508,11 @@ made_of(yarn, wool).
 
 % Location data
 indoors(locked_stage).
+indoors(luxury_theater).
 indoors(meeting_house).
 indoors(mysterious_mansion).
 indoors(observatory).
+indoors(prop_shop).
 indoors(watertower_bar_grill).
 outdoors(ancient_ruins).
 outdoors(city_backlot).
@@ -488,5 +523,7 @@ outdoors(haunted_grove).
 outdoors(hedge_maze).
 outdoors(locked_gate).
 outdoors(minigolf_course).
+outdoors(statue_of_midnight_i).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
+outdoors(studio_tour_check_in_stand).
