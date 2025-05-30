@@ -20,11 +20,11 @@ solution(L) :-
   member([_, _, luxury_theater], L),
   member([_, _, prop_shop], L),
   member([_, _, studio_tour_check_in_stand], L),
-  member([_, _, statue_of_midnight_i], L),
+  member([_, _, statue_of_midnight], L),
 
   % Clues.
   \+member([_, prop_knife, prop_shop], L),
-  made_of(StatueWeapon, wood), member([_, StatueWeapon, statue_of_midnight_i], L),
+  made_of(StatueWeapon, wood), member([_, StatueWeapon, statue_of_midnight], L),
   \+member([admiral_navy, _, luxury_theater], L),
   eyes(TypewriterPerson, green), member([TypewriterPerson, antique_typewriter, _], L),
   member([brother_brownstone, clapboard, _], L),

@@ -266,6 +266,30 @@ dossier(brother_brownstone,
   sign(capricorn)
 ).
 
+dossier(sir_rulean,
+  height(5,8),
+  handed(right),
+  eyes(blue),
+  hair(red),
+  sign(leo)
+).
+
+dossier(agent_fuchsia,
+  height(5,8),
+  handed(left),
+  eyes(brown),
+  hair(brown),
+  sign(virgo)
+).
+
+dossier(general_coffee,
+  height(6,0),
+  handed(right),
+  eyes(brown),
+  hair(none),
+  sign(sagittarius)
+).
+
 % End of dossiers
 
 
@@ -289,21 +313,17 @@ height(silverton_the_legend, [6,4]).
 height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
-sign(agent_fuchsia, virgo).
 sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
 sign(dr_crimson, aquarius).
 sign(earl_grey, capricorn).
 sign(father_mango, taurus).
-sign(general_coffee, sagittarius).
 sign(lady_violet, virgo).
 sign(secretary_celadon, leo).
-sign(sir_rulean, leo).
 sign(vice_president_mauve, taurus).
 
 
 eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
-eyes(agent_fuchsia, brown).
 eyes(bishop_azure, brown).
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
@@ -431,6 +451,26 @@ weapon_composition(antique_typewriter,
   weight(heavy),
   made_of([metal])
 ).
+weapon_composition(piano_wire,
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(poisoned_klonopin,
+  weight(light),
+  made_of([chemicals])
+).
+weapon_composition(heavy_candle,
+  weight(medium),
+  made_of([glass, wax])
+).
+weapon_composition(murdle_board_game,
+  weight(medium),
+  made_of([paper])
+).
+weapon_composition(rare_vase,
+  weight(heavy),
+  made_of([ceramic])
+).
 
 
 % End of weapon_composition
@@ -443,7 +483,6 @@ heavy_weight(golf_cart).
 heavy_weight(heavy_painting).
 heavy_weight(oar).
 heavy_weight(old_heavy_tome).
-heavy_weight(rare_vase).
 heavy_weight(stage_light).
 
 light_weight(Weapon) :- weapon_composition(Weapon, weight(light), made_of(_)).
@@ -498,7 +537,6 @@ made_of(poisoned_champagne, glass).
 made_of(poisoned_champagne, toxins).
 made_of(poisoned_tea, ceramic).
 made_of(poisoned_tea, liquid).
-made_of(rare_vase, ceramic).
 made_of(stage_light, glass).
 made_of(stage_light, metal).
 made_of(steering_wheel, wood).
@@ -507,23 +545,27 @@ made_of(wine, glass).
 made_of(yarn, wool).
 
 % Location data
+indoors(bedroom).
+indoors(enormous_bathroom).
 indoors(locked_stage).
 indoors(luxury_theater).
 indoors(meeting_house).
 indoors(mysterious_mansion).
 indoors(observatory).
 indoors(prop_shop).
+indoors(screening_room).
 indoors(watertower_bar_grill).
 outdoors(ancient_ruins).
 outdoors(city_backlot).
 outdoors(cliffs).
 outdoors(docks).
 outdoors(entrance_gate).
+outdoors(grounds).
 outdoors(haunted_grove).
 outdoors(hedge_maze).
 outdoors(locked_gate).
 outdoors(minigolf_course).
-outdoors(statue_of_midnight_i).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
 outdoors(studio_tour_check_in_stand).
+outdoors(upstairs_balcony).
