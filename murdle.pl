@@ -290,6 +290,30 @@ dossier(general_coffee,
   sign(sagittarius)
 ).
 
+dossier(miss_saffron,
+  height(5,2),
+  handed(left),
+  eyes(hazel),
+  hair(blond),
+  sign(libra)
+).
+
+dossier(president_amaranth,
+  height(5,10),
+  handed(right),
+  eyes(grey),
+  hair(red),
+  sign(gemini)
+).
+
+dossier(chef_aubergine,
+  height(5,2),
+  handed(right),
+  eyes(blue),
+  hair(blond),
+  sign(libra)
+).
+
 % End of dossiers
 
 
@@ -298,7 +322,6 @@ left_handed(major_red).
 
 right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hair(_), sign(_)).
 right_handed(lady_violet).
-right_handed(president_amaranth).
 right_handed(silverton_the_legend).
 right_handed(vice_president_mauve).
 
@@ -307,8 +330,6 @@ height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
 height(earl_grey, [5,9]).
 height(lady_violet, [5,0]).
-height(miss_saffron, [5,2]).
-height(president_amaranth, [5,10]).
 height(silverton_the_legend, [6,4]).
 height(vice_president_mauve, [5,8]).
 
@@ -331,8 +352,6 @@ eyes(earl_grey, brown).
 eyes(father_mango, brown).
 eyes(lady_violet, blue).
 eyes(major_red, brown).
-eyes(miss_saffron, hazel).
-eyes(president_amaranth, grey).
 eyes(silverton_the_legend, blue).
 eyes(vice_president_mauve, brown).
 
@@ -341,7 +360,6 @@ hair(bishop_azure, brown).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
 hair(lady_violet, blond).
-hair(miss_saffron, blond).
 hair(silverton_the_legend, silver).
 
 
@@ -471,6 +489,22 @@ weapon_composition(rare_vase,
   weight(heavy),
   made_of([ceramic])
 ).
+weapon_composition(briefcase_full_of_money,
+  weight(heavy),
+  made_of([leather, money])
+).
+weapon_composition(angry_moose,
+  weight(heavy),
+  made_of([moose])
+).
+weapon_composition(antique_vase,
+  weight(heavy),
+  made_of([ceramic])
+).
+weapon_composition(pencil,
+  weight(light),
+  made_of([wood])
+).
 
 
 % End of weapon_composition
@@ -549,6 +583,7 @@ indoors(bedroom).
 indoors(enormous_bathroom).
 indoors(locked_stage).
 indoors(luxury_theater).
+indoors(main_house).
 indoors(meeting_house).
 indoors(mysterious_mansion).
 indoors(observatory).
@@ -560,6 +595,7 @@ outdoors(city_backlot).
 outdoors(cliffs).
 outdoors(docks).
 outdoors(entrance_gate).
+outdoors(garden_maze).
 outdoors(grounds).
 outdoors(haunted_grove).
 outdoors(hedge_maze).
