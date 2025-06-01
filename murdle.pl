@@ -505,6 +505,18 @@ weapon_composition(pencil,
   weight(light),
   made_of([wood])
 ).
+weapon_composition(gold_watch,
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(exploding_cufflinks,
+  weight(light),
+  made_of([metal])
+).
+weapon_composition(cabernet_toilet_wine,
+  weight(medium),
+  made_of([glass, alcohol])
+).
 
 
 % End of weapon_composition
@@ -532,7 +544,6 @@ medium_weight(award).
 medium_weight(bottle).
 medium_weight(camera).
 medium_weight(dagger).
-medium_weight(gold_watch).
 medium_weight(ordinary_brick).
 medium_weight(poisoned_goblet).
 
@@ -581,14 +592,19 @@ made_of(yarn, wool).
 % Location data
 indoors(bedroom).
 indoors(enormous_bathroom).
+indoors(guard_tower).
 indoors(locked_stage).
 indoors(luxury_theater).
 indoors(main_house).
 indoors(meeting_house).
+indoors(michelin_starred_cafeteria).
 indoors(mysterious_mansion).
 indoors(observatory).
+indoors(private_suite).
 indoors(prop_shop).
+indoors(rec_room).
 indoors(screening_room).
+indoors(spa).
 indoors(watertower_bar_grill).
 outdoors(ancient_ruins).
 outdoors(city_backlot).
@@ -604,4 +620,5 @@ outdoors(minigolf_course).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
 outdoors(studio_tour_check_in_stand).
+outdoors(tennis_court).
 outdoors(upstairs_balcony).
