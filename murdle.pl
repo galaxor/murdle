@@ -372,6 +372,10 @@ weapon_composition(climbing_rope,
   weight(light),
   made_of([fiber])
 ).
+weapon_composition(murdle_volume_1,
+  weight(medium),
+  made_of([paper])
+).
 weapon_composition(murdle_volume_3,
   weight(medium),
   made_of([paper])
@@ -517,6 +521,14 @@ weapon_composition(cabernet_toilet_wine,
   weight(medium),
   made_of([glass, alcohol])
 ).
+weapon_composition(poisoned_goblet,
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(old_heavy_tome,
+  weight(heavy),
+  made_of([paper, cloth])
+).
 
 
 % End of weapon_composition
@@ -528,7 +540,6 @@ heavy_weight(crystal_ball).
 heavy_weight(golf_cart).
 heavy_weight(heavy_painting).
 heavy_weight(oar).
-heavy_weight(old_heavy_tome).
 heavy_weight(stage_light).
 
 light_weight(Weapon) :- weapon_composition(Weapon, weight(light), made_of(_)).
@@ -545,7 +556,6 @@ medium_weight(bottle).
 medium_weight(camera).
 medium_weight(dagger).
 medium_weight(ordinary_brick).
-medium_weight(poisoned_goblet).
 
 made_of(Weapon, Substance) :- weapon_composition(Weapon, weight(_), made_of(Substances)), member(Substance, Substances).
 made_of(ancient_anchor, metal).
@@ -594,6 +604,7 @@ indoors(bedroom).
 indoors(enormous_bathroom).
 indoors(guard_tower).
 indoors(locked_stage).
+indoors(lonely_tower).
 indoors(luxury_theater).
 indoors(main_house).
 indoors(meeting_house).
@@ -604,6 +615,7 @@ indoors(private_suite).
 indoors(prop_shop).
 indoors(rec_room).
 indoors(screening_room).
+indoors(secret_chamber).
 indoors(spa).
 indoors(watertower_bar_grill).
 outdoors(ancient_ruins).
@@ -617,6 +629,7 @@ outdoors(haunted_grove).
 outdoors(hedge_maze).
 outdoors(locked_gate).
 outdoors(minigolf_course).
+outdoors(screaming_forest).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
 outdoors(studio_tour_check_in_stand).
