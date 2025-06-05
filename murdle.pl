@@ -529,6 +529,22 @@ weapon_composition(old_heavy_tome,
   weight(heavy),
   made_of([paper, cloth])
 ).
+weapon_composition(surgical_scalpel,
+  weight(light),
+  made_of([metal])
+).
+weapon_composition(vial_of_acid,
+  weight(light),
+  made_of([glass, chemicals])
+).
+weapon_composition(heavy_microscope,
+  weight(heavy),
+  made_of([metal, plastic])
+).
+weapon_composition(heavy_codebook,
+  weight(heavy),
+  made_of([paper])
+).
 
 
 % End of weapon_composition
@@ -601,6 +617,7 @@ made_of(yarn, wool).
 
 % Location data
 indoors(bedroom).
+indoors(break_room).
 indoors(enormous_bathroom).
 indoors(guard_tower).
 indoors(locked_stage).
@@ -614,9 +631,11 @@ indoors(observatory).
 indoors(private_suite).
 indoors(prop_shop).
 indoors(rec_room).
+indoors(richest_patients_room).
 indoors(screening_room).
 indoors(secret_chamber).
 indoors(spa).
+indoors(waiting_room).
 indoors(watertower_bar_grill).
 outdoors(ancient_ruins).
 outdoors(city_backlot).
@@ -629,6 +648,7 @@ outdoors(haunted_grove).
 outdoors(hedge_maze).
 outdoors(locked_gate).
 outdoors(minigolf_course).
+outdoors(roof).
 outdoors(screaming_forest).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
