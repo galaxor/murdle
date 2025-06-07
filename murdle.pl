@@ -18,7 +18,7 @@ tallest([P|[P1|T]], M) :- left_taller(P, P1), tallest([P|T], M); same_height(P, 
 second_tallest(People, Person) :- 
   findall(H, (member(P, People), height(P, H)), Heights),
   sort(Heights, SortedHeights),
-  nth(2, SortedHeights, SecondHeight),
+  SortedHeights=[_|[SecondHeight|_]],
   member(Person, People),
   height(Person, SecondHeight)
 .
@@ -314,6 +314,22 @@ dossier(chef_aubergine,
   sign(libra)
 ).
 
+dossier(father_mango,
+  height(5,10),
+  handed(left),
+  eyes(brown),
+  hair(none),
+  sign(taurus)
+).
+
+dossier(lady_violet,
+  height(5,10),
+  handed(right),
+  eyes(blue),
+  hair(blond),
+  sign(virgo)
+).
+
 % End of dossiers
 
 
@@ -321,7 +337,6 @@ left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(
 left_handed(major_red).
 
 right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hair(_), sign(_)).
-right_handed(lady_violet).
 right_handed(silverton_the_legend).
 right_handed(vice_president_mauve).
 
@@ -329,7 +344,6 @@ height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_
 height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
 height(earl_grey, [5,9]).
-height(lady_violet, [5,0]).
 height(silverton_the_legend, [6,4]).
 height(vice_president_mauve, [5,8]).
 
@@ -338,8 +352,6 @@ sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
 sign(dr_crimson, aquarius).
 sign(earl_grey, capricorn).
-sign(father_mango, taurus).
-sign(lady_violet, virgo).
 sign(secretary_celadon, leo).
 sign(vice_president_mauve, taurus).
 
@@ -349,8 +361,6 @@ eyes(bishop_azure, brown).
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
 eyes(earl_grey, brown).
-eyes(father_mango, brown).
-eyes(lady_violet, blue).
 eyes(major_red, brown).
 eyes(silverton_the_legend, blue).
 eyes(vice_president_mauve, brown).
@@ -359,7 +369,6 @@ hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Col
 hair(bishop_azure, brown).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
-hair(lady_violet, blond).
 hair(silverton_the_legend, silver).
 
 
@@ -545,6 +554,22 @@ weapon_composition(heavy_codebook,
   weight(heavy),
   made_of([paper])
 ).
+weapon_composition(trained_vicious_rabbit,
+  weight(medium),
+  made_of([rabbit, rabbit_fur])
+).
+weapon_composition(ace_of_spades,
+  weight(light),
+  made_of([paper])
+).
+weapon_composition(bottle_of_cheap_liquor,
+  weight(light),
+  made_of([glass, chemicals])
+).
+weapon_composition(saw,
+  weight(medium),
+  made_of([metal, wood])
+).
 
 
 % End of weapon_composition
@@ -618,16 +643,20 @@ made_of(yarn, wool).
 % Location data
 indoors(bedroom).
 indoors(break_room).
+indoors(close_up_table).
 indoors(enormous_bathroom).
 indoors(guard_tower).
 indoors(locked_stage).
 indoors(lonely_tower).
 indoors(luxury_theater).
 indoors(main_house).
+indoors(main_stage).
 indoors(meeting_house).
 indoors(michelin_starred_cafeteria).
 indoors(mysterious_mansion).
 indoors(observatory).
+indoors(piano_room).
+indoors(private_library).
 indoors(private_suite).
 indoors(prop_shop).
 indoors(rec_room).
