@@ -1,17 +1,29 @@
-suspects([], []).
-suspects([Suspect|Suspects], L) :- L = [[Suspect, _, _] | Rest], suspects(Suspects, Rest).
+suspects(Suspects, SolutionList) :- 
+    suspects_without_motive(Suspects, SolutionList) 
+  ; suspects_with_motive(Suspects, SolutionList)
+.
+  suspects_without_motive([], []).
+  suspects_without_motive([Suspect|Suspects], L) :- L = [[Suspect, _, _] | Rest], suspects_without_motive(Suspects, Rest).
 
-suspects_with_motive([], []).
-suspects_with_motive([Suspect|Suspects], L) :- L = [[Suspect, _, _, _] | Rest], suspects_with_motive(Suspects, Rest).
+  suspects_with_motive([], []).
+  suspects_with_motive([Suspect|Suspects], L) :- L = [[Suspect, _, _, _] | Rest], suspects_with_motive(Suspects, Rest).
 
-weapons([], _).
-weapons([Weapon|Weapons], L) :- member([_, Weapon, _], L), weapons(Weapons, L).
+weapons(Weapons, SolutionList) :-
+    weapons_without_motive(Weapons, SolutionList)
+  ; weapons_with_motive(Weapons, SolutionList)
+.
+  weapons_without_motive([], _).
+  weapons_without_motive([Weapon|Weapons], L) :- member([_, Weapon, _], L), weapons_without_motive(Weapons, L).
 
-weapons_with_motive([], _).
-weapons_with_motive([Weapon|Weapons], L) :- member([_, Weapon, _, _], L), weapons_with_motive(Weapons, L).
+  weapons_with_motive([], _).
+  weapons_with_motive([Weapon|Weapons], L) :- member([_, Weapon, _, _], L), weapons_with_motive(Weapons, L).
 
-locations([], _).
-locations([Location|Locations], L) :- member([_, _, Location], L), locations(Locations, L).
+locations(Locations, SolutionList) :-
+    locations_without_motive(Locations, SolutionList)
+  ; locations_with_motive(Locations, SolutionList)
+.
+locations_without_motive([], _).
+locations_without_motive([Location|Locations], L) :- member([_, _, Location], L), locations_without_motive(Locations, L).
 
 locations_with_motive([], _).
 locations_with_motive([Location|Locations], L) :- member([_, _, Location, _], L), locations_with_motive(Locations, L).
