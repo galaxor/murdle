@@ -1,3 +1,5 @@
+% Predicates to define the scenario for the day.
+
 suspects(Suspects, SolutionList) :- 
     suspects_without_motive(Suspects, SolutionList) 
   ; suspects_with_motive(Suspects, SolutionList)
@@ -30,6 +32,30 @@ locations_with_motive([Location|Locations], L) :- member([_, _, Location, _], L)
 
 motives([], _).
 motives([Motive|Motives], L) :- member([_, _, _, Motive], L), locations_with_motive(Motives, L).
+
+% Predicates to describe the clues.
+suspect_had_weapon(Suspect, Weapon, SolutionList) :-
+    member([Suspect, Weapon, _], SolutionList)
+  ; member([Suspect, Weapon, _, _], SolutionList)
+.
+suspect_at_location(Suspect, Location, SolutionList) :-
+    member([Suspect, _, Location], SolutionList)
+  ; member([Suspect, _, Location, _], SolutionList)
+.
+weapon_at_location(Weapon, Location, SolutionList) :-
+    member([_, Weapon, Location], SolutionList)
+  ; member([_, Weapon, Location, _], SolutionList)
+.
+suspect_motive(Suspect, Motive, SolutionList) :- member([Suspect, _, _, Motive], SolutionList).
+weapon_motive(Weapon, Motive, SolutionList) :- member([_, Weapon, _, Motive], SolutionList).
+location_motive(Location, Motive, SolutionList) :- member([_, _, Location, Motive], SolutionList).
+
+
+% The puzzle can be solved without this specification.
+% This is only a performance enhancement so that we don't have to search as
+% many potential solutions.
+no_motives(SolutionList) :- \+member([_, _, _, _], SolutionList).
+with_motives(SolutionList) :- \+member([_, _, _], SolutionList).
 
 
 % Reasoning about height.
