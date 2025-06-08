@@ -1,3 +1,25 @@
+suspects([], []).
+suspects([Suspect|Suspects], L) :- L = [[Suspect, _, _] | Rest], suspects(Suspects, Rest).
+
+suspects_with_motive([], []).
+suspects_with_motive([Suspect|Suspects], L) :- L = [[Suspect, _, _, _] | Rest], suspects_with_motive(Suspects, Rest).
+
+weapons([], _).
+weapons([Weapon|Weapons], L) :- member([_, Weapon, _], L), weapons(Weapons, L).
+
+weapons_with_motive([], _).
+weapons_with_motive([Weapon|Weapons], L) :- member([_, Weapon, _, _], L), weapons_with_motive(Weapons, L).
+
+locations([], _).
+locations([Location|Locations], L) :- member([_, _, Location], L), locations(Locations, L).
+
+locations_with_motive([], _).
+locations_with_motive([Location|Locations], L) :- member([_, _, Location, _], L), locations_with_motive(Locations, L).
+
+motives([], _).
+motives([Motive|Motives], L) :- member([_, _, _, Motive], L), locations_with_motive(Motives, L).
+
+
 % Reasoning about height.
 left_taller(P1, P2) :- 
   height(P1, [F1, _]), height(P2, [F2, _]), (F1 > F2);
@@ -330,6 +352,14 @@ dossier(lady_violet,
   sign(virgo)
 ).
 
+dossier(earl_grey,
+  height(5,9),
+  handed(right),
+  eyes(brown),
+  hair(white),
+  sign(capricorn)
+).
+
 % End of dossiers
 
 
@@ -343,7 +373,6 @@ right_handed(vice_president_mauve).
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
 height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
-height(earl_grey, [5,9]).
 height(silverton_the_legend, [6,4]).
 height(vice_president_mauve, [5,8]).
 
@@ -351,7 +380,6 @@ sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), 
 sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
 sign(dr_crimson, aquarius).
-sign(earl_grey, capricorn).
 sign(secretary_celadon, leo).
 sign(vice_president_mauve, taurus).
 
@@ -360,7 +388,6 @@ eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair
 eyes(bishop_azure, brown).
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
-eyes(earl_grey, brown).
 eyes(major_red, brown).
 eyes(silverton_the_legend, blue).
 eyes(vice_president_mauve, brown).
@@ -653,6 +680,7 @@ indoors(main_house).
 indoors(main_stage).
 indoors(meeting_house).
 indoors(michelin_starred_cafeteria).
+indoors(movie_theater).
 indoors(mysterious_mansion).
 indoors(observatory).
 indoors(piano_room).
