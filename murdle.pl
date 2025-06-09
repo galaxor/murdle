@@ -635,6 +635,22 @@ weapon_composition(saw,
   weight(medium),
   made_of([metal, wood])
 ).
+weapon_composition(award,
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(bookie,
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(dvd_box_set,
+  weight(medium),
+  made_of([wood, paper, plastic])
+).
+weapon_composition(camera,
+  weight(medium),
+  made_of([plastic, metal, glass])
+).
 
 
 % End of weapon_composition
@@ -657,23 +673,17 @@ light_weight(gloves).
 light_weight(poisoned_tea).
 
 medium_weight(Weapon) :- weapon_composition(Weapon, weight(medium), made_of(_)).
-medium_weight(award).
 medium_weight(bottle).
-medium_weight(camera).
 medium_weight(dagger).
 medium_weight(ordinary_brick).
 
 made_of(Weapon, Substance) :- weapon_composition(Weapon, weight(_), made_of(Substances)), member(Substance, Substances).
 made_of(ancient_anchor, metal).
-made_of(award, metal).
 made_of(bear_trap, metal).
 made_of(boiling_pot, metal).
 made_of(boiling_pot, water).
 made_of(brick_of_coal, rock).
 made_of(brick, clay).
-made_of(camera, glass).
-made_of(camera, metal).
-made_of(camera, plastic).
 made_of(climbing_axe, metal).
 made_of(climbing_axe, wood).
 made_of(corgi_stampede, corgis).
