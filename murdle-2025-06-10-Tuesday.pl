@@ -3,6 +3,9 @@
 solution(L) :-
   % Basic setup.
   consult(murdle),
+  consult('knowledge-base-suspects.pl'),
+  consult('knowledge-base-weapons.pl'),
+  consult('knowledge-base-locations.pl'),
 
   % Who is there
   suspects([
