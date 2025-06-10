@@ -31,7 +31,7 @@ locations_with_motive([], _).
 locations_with_motive([Location|Locations], L) :- member([_, _, Location, _], L), locations_with_motive(Locations, L).
 
 motives([], _).
-motives([Motive|Motives], L) :- member([_, _, _, Motive], L), locations_with_motive(Motives, L).
+motives([Motive|Motives], L) :- member([_, _, _, Motive], L), motives(Motives, L).
 
 % Predicates to describe the clues.
 suspect_had_weapon(Suspect, Weapon, SolutionList) :-
@@ -398,6 +398,14 @@ dossier(earl_grey,
   sign(capricorn)
 ).
 
+dossier(bishop_azure,
+  height(5,4),
+  handed(right),
+  eyes(brown),
+  hair(brown),
+  sign(gemini)
+).
+
 % End of dossiers
 
 
@@ -423,7 +431,6 @@ sign(vice_president_mauve, taurus).
 
 
 eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
-eyes(bishop_azure, brown).
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
 eyes(major_red, brown).
@@ -431,7 +438,6 @@ eyes(silverton_the_legend, blue).
 eyes(vice_president_mauve, brown).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
-hair(bishop_azure, brown).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
 hair(silverton_the_legend, silver).
@@ -650,6 +656,14 @@ weapon_composition(dvd_box_set,
 weapon_composition(camera,
   weight(medium),
   made_of([plastic, metal, glass])
+).
+weapon_composition(aluminum_pipe,
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(jar_of_ashes,
+  weight(medium),
+  made_of([metal, human_remains])
 ).
 
 
