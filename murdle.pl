@@ -406,6 +406,14 @@ dossier(bishop_azure,
   sign(gemini)
 ).
 
+dossier(silverton_the_legend,
+  height(6,4),
+  handed(right),
+  eyes(blue),
+  hair(silver),
+  sign(leo)
+).
+
 % End of dossiers
 
 
@@ -413,13 +421,11 @@ left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(
 left_handed(major_red).
 
 right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hair(_), sign(_)).
-right_handed(silverton_the_legend).
 right_handed(vice_president_mauve).
 
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
 height(deacon_verdigris, [5,3]).
 height(dr_crimson, [5,9]).
-height(silverton_the_legend, [6,4]).
 height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
@@ -434,13 +440,11 @@ eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair
 eyes(deacon_verdigris, blue).
 eyes(dr_crimson, green).
 eyes(major_red, brown).
-eyes(silverton_the_legend, blue).
 eyes(vice_president_mauve, brown).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
 hair(deacon_verdigris, grey).
 hair(dr_crimson, red).
-hair(silverton_the_legend, silver).
 
 
 % Weapon data
@@ -532,6 +536,10 @@ weapon_composition(axe,
 weapon_composition(chainsaw,
   weight(heavy),
   made_of([metal, plastic])
+).
+weapon_composition(greenskeepers_chainsaw,
+  weight(heavy),
+  made_of([metal, plastic, chemicals])
 ).
 weapon_composition(angry_llama,
   weight(heavy),
@@ -665,6 +673,14 @@ weapon_composition(jar_of_ashes,
   weight(medium),
   made_of([metal, human_remains])
 ).
+weapon_composition(poisoned_cocktail,
+  weight(light),
+  made_of([glass, chemicals, alcohol])
+).
+weapon_composition(bottle_of_wine,
+  weight(medium),
+  made_of([glass, alcohol])
+).
 
 
 % End of weapon_composition
@@ -732,6 +748,7 @@ made_of(yarn, wool).
 % Location data
 indoors(bedroom).
 indoors(break_room).
+indoors(caddy_shack).
 indoors(close_up_table).
 indoors(enormous_bathroom).
 indoors(guard_tower).
@@ -741,6 +758,7 @@ indoors(luxury_theater).
 indoors(main_house).
 indoors(main_stage).
 indoors(meeting_house).
+indoors(mens_lounge).
 indoors(michelin_starred_cafeteria).
 indoors(movie_theater).
 indoors(mysterious_mansion).
