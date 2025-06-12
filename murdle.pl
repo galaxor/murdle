@@ -140,6 +140,11 @@ birthday_sign(Month, Day, capricorn) :- (Month=december, Day >= 22) ; (Month=jan
 birthday_sign(Month, Day, aquarius) :- (Month=january, Day >= 20) ; (Month=february, Day =< 18).
 birthday_sign(Month, Day, pisces) :- (Month=february, Day >= 19) ; (Month=march, Day =< 20).
 
+birthday(Person, Month, Day) :- 
+  birthday_sign(Month, Day, Sign),
+  sign(Person, Sign)
+.
+
 
 % Biographical Info
 dossier(secretary_celadon,
@@ -432,7 +437,6 @@ sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), 
 sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
 sign(dr_crimson, aquarius).
-sign(secretary_celadon, leo).
 sign(vice_president_mauve, taurus).
 
 
@@ -681,7 +685,22 @@ weapon_composition(bottle_of_wine,
   weight(medium),
   made_of([glass, alcohol])
 ).
-
+weapon_composition(antique_flintlock,
+  weight(medium),
+  made_of([wood, metal])
+).
+weapon_composition(yarn,
+  weight(light),
+  made_of([wool])
+).
+weapon_composition(wine_bottle,
+  weight(medium),
+  made_of([glass])
+).
+weapon_composition(string_of_prayer_beads,
+  weight(light),
+  made_of([wood, metal])
+).
 
 % End of weapon_composition
   
@@ -743,12 +762,13 @@ made_of(stage_light, metal).
 made_of(steering_wheel, wood).
 made_of(venemous_spider, live_animal).
 made_of(wine, glass).
-made_of(yarn, wool).
 
 % Location data
 indoors(bedroom).
+indoors(bell_tower).
 indoors(break_room).
 indoors(caddy_shack).
+indoors(choir_loft).
 indoors(close_up_table).
 indoors(enormous_bathroom).
 indoors(guard_tower).
@@ -772,6 +792,7 @@ indoors(richest_patients_room).
 indoors(screening_room).
 indoors(secret_chamber).
 indoors(spa).
+indoors(vestibule).
 indoors(waiting_room).
 indoors(watertower_bar_grill).
 outdoors(ancient_ruins).
@@ -780,6 +801,7 @@ outdoors(cliffs).
 outdoors(docks).
 outdoors(entrance_gate).
 outdoors(garden_maze).
+outdoors(graveyard).
 outdoors(grounds).
 outdoors(haunted_grove).
 outdoors(hedge_maze).
