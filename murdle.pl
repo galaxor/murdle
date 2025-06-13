@@ -419,6 +419,14 @@ dossier(silverton_the_legend,
   sign(leo)
 ).
 
+dossier(dr_crimson,
+  height(5,9),
+  handed(left),
+  eyes(green),
+  hair(red),
+  sign(aquarius)
+).
+
 % End of dossiers
 
 
@@ -430,25 +438,21 @@ right_handed(vice_president_mauve).
 
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
 height(deacon_verdigris, [5,3]).
-height(dr_crimson, [5,9]).
 height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
 sign(dame_obsidian, leo).
 sign(deacon_verdigris, leo).
-sign(dr_crimson, aquarius).
 sign(vice_president_mauve, taurus).
 
 
 eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
 eyes(deacon_verdigris, blue).
-eyes(dr_crimson, green).
 eyes(major_red, brown).
 eyes(vice_president_mauve, brown).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
 hair(deacon_verdigris, grey).
-hair(dr_crimson, red).
 
 
 % Weapon data
@@ -701,6 +705,18 @@ weapon_composition(string_of_prayer_beads,
   weight(light),
   made_of([wood, metal])
 ).
+weapon_composition(karate_hands,
+  weight(medium),
+  made_of([hands])
+).
+weapon_composition(crazed_squirrel,
+  weight(light),
+  made_of([teeth, fur])
+).
+weapon_composition(ancient_plague,
+  weight(light),
+  made_of([dna])
+).
 
 % End of weapon_composition
   
@@ -714,8 +730,6 @@ heavy_weight(oar).
 heavy_weight(stage_light).
 
 light_weight(Weapon) :- weapon_composition(Weapon, weight(light), made_of(_)).
-light_weight(ancient_plague).
-light_weight(crazed_squirrel).
 light_weight(cufflinks).
 light_weight(glass_of_wine).
 light_weight(gloves).
@@ -748,7 +762,6 @@ made_of(heavy_painting, wood).
 made_of(holy_relic, bone).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
-made_of(karate_hands, hands).
 made_of(metal_straw, metal).
 made_of(metal_straw, wood).
 made_of(oar, wood).
@@ -770,7 +783,9 @@ indoors(break_room).
 indoors(caddy_shack).
 indoors(choir_loft).
 indoors(close_up_table).
+indoors(dungeon).
 indoors(enormous_bathroom).
+indoors(great_hall).
 indoors(guard_tower).
 indoors(locked_stage).
 indoors(lonely_tower).
