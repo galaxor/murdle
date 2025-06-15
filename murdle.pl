@@ -427,6 +427,16 @@ dossier(dr_crimson,
   sign(aquarius)
 ).
 
+dossier(deacon_verdigris,
+  height(5,3),
+  handed(left),
+  eyes(blue),
+  hair(grey),
+  sign(leo)
+).
+
+
+
 % End of dossiers
 
 
@@ -437,22 +447,18 @@ right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hai
 right_handed(vice_president_mauve).
 
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
-height(deacon_verdigris, [5,3]).
 height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
 sign(dame_obsidian, leo).
-sign(deacon_verdigris, leo).
 sign(vice_president_mauve, taurus).
 
 
 eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
-eyes(deacon_verdigris, blue).
 eyes(major_red, brown).
 eyes(vice_president_mauve, brown).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
-hair(deacon_verdigris, grey).
 
 
 % Weapon data
@@ -580,6 +586,18 @@ weapon_composition(poisoned_klonopin,
 weapon_composition(heavy_candle,
   weight(medium),
   made_of([glass, wax])
+).
+weapon_composition(poisoned_candle,
+  weight(medium),
+  made_of([wax])
+).
+weapon_composition(pitchfork,
+  weight(medium),
+  made_of([metal, wood])
+).
+weapon_composition(channeled_text,
+  weight(heavy),
+  made_of([paper])
 ).
 weapon_composition(murdle_board_game,
   weight(medium),
@@ -777,6 +795,7 @@ made_of(venemous_spider, live_animal).
 made_of(wine, glass).
 
 % Location data
+indoors(barracks).
 indoors(bedroom).
 indoors(bell_tower).
 indoors(break_room).
@@ -787,6 +806,7 @@ indoors(dungeon).
 indoors(enormous_bathroom).
 indoors(great_hall).
 indoors(guard_tower).
+indoors(library).
 indoors(locked_stage).
 indoors(lonely_tower).
 indoors(luxury_theater).
