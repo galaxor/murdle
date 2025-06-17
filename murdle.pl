@@ -83,6 +83,17 @@ second_tallest(People, Person) :-
   height(Person, SecondHeight)
 .
 
+second_tallest_suspect(Person, L) :- 
+  (findall(Person, member([Person, _, _], L), People)
+    ; findall(Person, member([Person, _, _, _], L), People)
+  ),
+  findall(H, (member(P, People), height(P, H)), Heights),
+  sort(Heights, SortedHeights),
+  SortedHeights=[_|[SecondHeight|_]],
+  member(Person, People),
+  height(Person, SecondHeight)
+.
+
 % include/3 is in SWI-Prolog, but not in gprolog.
 % Define a polyfill here, I guess??
 include(_, [], []).
