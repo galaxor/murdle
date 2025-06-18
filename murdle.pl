@@ -446,7 +446,13 @@ dossier(deacon_verdigris,
   sign(leo)
 ).
 
-
+dossier(comrade_champagne,
+  height(5,11),
+  handed(left),
+  eyes(hazel),
+  hair(blond),
+  sign(capricorn)
+).
 
 % End of dossiers
 
@@ -746,6 +752,18 @@ weapon_composition(ancient_plague,
   weight(light),
   made_of([dna])
 ).
+weapon_composition(fire_extinguisher,
+  weight(heavy),
+  made_of([metal])
+).
+weapon_composition(kindness,
+  weight(light),
+  made_of([generosity, warmth])
+).
+weapon_composition(clipboard,
+  weight(medium),
+  made_of([paper, wood])
+).
 
 % End of weapon_composition
   
@@ -853,6 +871,7 @@ outdoors(haunted_grove).
 outdoors(hedge_maze).
 outdoors(locked_gate).
 outdoors(minigolf_course).
+outdoors(parking_lot).
 outdoors(roof).
 outdoors(screaming_forest).
 outdoors(statue_of_midnight).
