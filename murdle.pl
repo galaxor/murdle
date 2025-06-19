@@ -764,6 +764,22 @@ weapon_composition(clipboard,
   weight(medium),
   made_of([paper, wood])
 ).
+weapon_composition(ski_pole,
+  weight(light),
+  made_of([metal])
+).
+weapon_composition(poisoned_hot_chocolate,
+  weight(light),
+  made_of([ceramic, chemicals])
+).
+weapon_composition(snowboard,
+  weight(medium),
+  made_of([wood])
+).
+weapon_composition(flare_gun,
+  weight(light),
+  made_of([metal])
+).
 
 % End of weapon_composition
   
@@ -824,6 +840,7 @@ made_of(venemous_spider, live_animal).
 made_of(wine, glass).
 
 % Location data
+indoors(bar_in_town).
 indoors(barracks).
 indoors(bedroom).
 indoors(bell_tower).
@@ -837,6 +854,7 @@ indoors(great_hall).
 indoors(guard_tower).
 indoors(library).
 indoors(locked_stage).
+indoors(lodge).
 indoors(lonely_tower).
 indoors(luxury_theater).
 indoors(main_house).
@@ -874,8 +892,10 @@ outdoors(minigolf_course).
 outdoors(parking_lot).
 outdoors(roof).
 outdoors(screaming_forest).
+outdoors(slopes).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
 outdoors(studio_tour_check_in_stand).
 outdoors(tennis_court).
 outdoors(upstairs_balcony).
+outdoors(woods).
