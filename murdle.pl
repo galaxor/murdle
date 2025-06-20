@@ -454,6 +454,14 @@ dossier(comrade_champagne,
   sign(capricorn)
 ).
 
+dossier(dame_obsidian,
+  height(5,4),
+  handed(left),
+  eyes(green),
+  hair(black),
+  sign(leo)
+).
+
 % End of dossiers
 
 
@@ -467,7 +475,6 @@ height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_
 height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
-sign(dame_obsidian, leo).
 sign(vice_president_mauve, taurus).
 
 
@@ -780,6 +787,23 @@ weapon_composition(flare_gun,
   weight(light),
   made_of([metal])
 ).
+weapon_composition(boiling_pot,
+  weight(heavy),
+  made_of([metal, water])
+).
+weapon_composition(butter_knife,
+  weight(light),
+  made_of([metal])
+).
+weapon_composition(poisoned_cup_of_coffee,
+  weight(medium),
+  made_of([ceramic, coffee, chemicals])
+).
+weapon_composition(metal_straw,
+  weight(heavy),
+  made_of([metal, wood])
+).
+
 
 % End of weapon_composition
   
@@ -806,8 +830,6 @@ medium_weight(ordinary_brick).
 made_of(Weapon, Substance) :- weapon_composition(Weapon, weight(_), made_of(Substances)), member(Substance, Substances).
 made_of(ancient_anchor, metal).
 made_of(bear_trap, metal).
-made_of(boiling_pot, metal).
-made_of(boiling_pot, water).
 made_of(brick_of_coal, rock).
 made_of(brick, clay).
 made_of(climbing_axe, metal).
@@ -825,8 +847,6 @@ made_of(heavy_painting, wood).
 made_of(holy_relic, bone).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
-made_of(metal_straw, metal).
-made_of(metal_straw, wood).
 made_of(oar, wood).
 made_of(ordinary_brick, brick).
 made_of(poisoned_champagne, glass).
@@ -842,12 +862,15 @@ made_of(wine, glass).
 % Location data
 indoors(bar_in_town).
 indoors(barracks).
+indoors(bathroom).
+indoors(bean_room).
 indoors(bedroom).
 indoors(bell_tower).
 indoors(break_room).
 indoors(caddy_shack).
 indoors(choir_loft).
 indoors(close_up_table).
+indoors(counter).
 indoors(dungeon).
 indoors(enormous_bathroom).
 indoors(great_hall).
@@ -880,6 +903,7 @@ indoors(watertower_bar_grill).
 outdoors(ancient_ruins).
 outdoors(city_backlot).
 outdoors(cliffs).
+outdoors(courtyard).
 outdoors(docks).
 outdoors(entrance_gate).
 outdoors(garden_maze).
