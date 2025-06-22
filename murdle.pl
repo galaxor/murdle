@@ -454,6 +454,14 @@ dossier(comrade_champagne,
   sign(capricorn)
 ).
 
+dossier(vice_president_mauve,
+  height(5,8),
+  handed(right),
+  eyes(brown),
+  hair(black),
+  sign(taurus)
+).
+
 % End of dossiers
 
 
@@ -461,19 +469,15 @@ left_handed(Person) :- dossier(Person, height(_,_), handed(left), eyes(_), hair(
 left_handed(major_red).
 
 right_handed(Person) :- dossier(Person, height(_,_), handed(right), eyes(_), hair(_), sign(_)).
-right_handed(vice_president_mauve).
 
 height(Person, [Feet, Inches]) :- dossier(Person, height(Feet, Inches), handed(_), eyes(_), hair(_), sign(_)).
-height(vice_president_mauve, [5,8]).
 
 sign(Person, Sign) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(_), sign(Sign)).
 sign(dame_obsidian, leo).
-sign(vice_president_mauve, taurus).
 
 
 eyes(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(Color), hair(_), sign(_)).
 eyes(major_red, brown).
-eyes(vice_president_mauve, brown).
 
 hair(Person, Color) :- dossier(Person, height(_,_), handed(_), eyes(_), hair(Color), sign(_)).
 
@@ -780,6 +784,15 @@ weapon_composition(flare_gun,
   weight(light),
   made_of([metal])
 ).
+weapon_composition(stone_dagger,
+  weight(medium),
+  made_of([stone])
+).
+weapon_composition(pair_of_leather_gloves,
+  weight(light),
+  made_of([leather])
+).
+
 
 % End of weapon_composition
   
@@ -795,7 +808,6 @@ heavy_weight(stage_light).
 light_weight(Weapon) :- weapon_composition(Weapon, weight(light), made_of(_)).
 light_weight(cufflinks).
 light_weight(glass_of_wine).
-light_weight(gloves).
 light_weight(poisoned_tea).
 
 medium_weight(Weapon) :- weapon_composition(Weapon, weight(medium), made_of(_)).
@@ -844,12 +856,14 @@ indoors(bar_in_town).
 indoors(barracks).
 indoors(bedroom).
 indoors(bell_tower).
+indoors(boutique_hotel).
 indoors(break_room).
 indoors(caddy_shack).
 indoors(choir_loft).
 indoors(close_up_table).
 indoors(dungeon).
 indoors(enormous_bathroom).
+indoors(five_star_restaurant).
 indoors(great_hall).
 indoors(guard_tower).
 indoors(library).
@@ -869,6 +883,7 @@ indoors(piano_room).
 indoors(private_library).
 indoors(private_suite).
 indoors(prop_shop).
+indoors(real_estate_office).
 indoors(rec_room).
 indoors(richest_patients_room).
 indoors(screening_room).
@@ -896,6 +911,7 @@ outdoors(slopes).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
 outdoors(studio_tour_check_in_stand).
+outdoors(trailhead).
 outdoors(tennis_court).
 outdoors(upstairs_balcony).
 outdoors(woods).
