@@ -460,7 +460,7 @@ dossier(vice_president_mauve,
   eyes(brown),
   hair(black),
   sign(taurus)
-),
+).
 
 dossier(dame_obsidian,
   height(5,4),
