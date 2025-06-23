@@ -820,13 +820,23 @@ weapon_composition(metal_straw,
   weight(heavy),
   made_of([metal, wood])
 ).
-
+weapon_composition(ordinary_brick,
+  weight(medium),
+  made_of([brick])
+).
+weapon_composition(bear_trap,
+  weight(heavy),
+  made_of([metal])
+).
+weapon_composition(harpoon,
+  weight(heavy),
+  made_of([metal])
+).
 
 % End of weapon_composition
   
 
 heavy_weight(Weapon) :- weapon_composition(Weapon, weight(heavy), made_of(_)).
-heavy_weight(bear_trap).
 heavy_weight(crystal_ball).
 heavy_weight(golf_cart).
 heavy_weight(heavy_painting).
@@ -841,11 +851,9 @@ light_weight(poisoned_tea).
 medium_weight(Weapon) :- weapon_composition(Weapon, weight(medium), made_of(_)).
 medium_weight(bottle).
 medium_weight(dagger).
-medium_weight(ordinary_brick).
 
 made_of(Weapon, Substance) :- weapon_composition(Weapon, weight(_), made_of(Substances)), member(Substance, Substances).
 made_of(ancient_anchor, metal).
-made_of(bear_trap, metal).
 made_of(brick_of_coal, rock).
 made_of(brick, clay).
 made_of(climbing_axe, metal).
@@ -864,7 +872,6 @@ made_of(holy_relic, bone).
 made_of(italian_knife, leather).
 made_of(italian_knife, metal).
 made_of(oar, wood).
-made_of(ordinary_brick, brick).
 made_of(poisoned_champagne, glass).
 made_of(poisoned_champagne, toxins).
 made_of(poisoned_tea, ceramic).
