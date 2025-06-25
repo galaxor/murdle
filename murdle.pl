@@ -832,6 +832,14 @@ weapon_composition(harpoon,
   weight(heavy),
   made_of([metal])
 ).
+weapon_composition(fishing_spear,
+  weight(medium),
+  made_of([metal])
+).
+weapon_composition(commemorative_sword,
+  weight(medium),
+  made_of([metal])
+).
 
 % End of weapon_composition
   
@@ -895,6 +903,7 @@ indoors(caddy_shack).
 indoors(choir_loft).
 indoors(close_up_table).
 indoors(counter).
+indoors(dining_hall).
 indoors(dungeon).
 indoors(enormous_bathroom).
 indoors(five_star_restaurant).
@@ -937,6 +946,7 @@ outdoors(graveyard).
 outdoors(grounds).
 outdoors(haunted_grove).
 outdoors(hedge_maze).
+outdoors(lifeguard_stand).
 outdoors(locked_gate).
 outdoors(minigolf_course).
 outdoors(parking_lot).
@@ -946,6 +956,7 @@ outdoors(slopes).
 outdoors(statue_of_midnight).
 outdoors(stone_bridge).
 outdoors(studio_tour_check_in_stand).
+outdoors(swim_up_bar).
 outdoors(trailhead).
 outdoors(tennis_court).
 outdoors(upstairs_balcony).
