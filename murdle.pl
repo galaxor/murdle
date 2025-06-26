@@ -840,6 +840,14 @@ weapon_composition(commemorative_sword,
   weight(medium),
   made_of([metal])
 ).
+weapon_composition(corgi_stampede,
+  weight(heavy),
+  made_of([corgis])
+).
+weapon_composition(fake_sword,
+  weight(heavy),
+  made_of([metal])
+).
 
 % End of weapon_composition
   
@@ -866,7 +874,6 @@ made_of(brick_of_coal, rock).
 made_of(brick, clay).
 made_of(climbing_axe, metal).
 made_of(climbing_axe, wood).
-made_of(corgi_stampede, corgis).
 made_of(glass_of_wine, alcohol).
 made_of(glass_of_wine, chemicals).
 made_of(glass_of_wine, glass).
